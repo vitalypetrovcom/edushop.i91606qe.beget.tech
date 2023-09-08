@@ -30,10 +30,24 @@ class Router {
      * Делаем статичные методы, чтобы не создавать экземпляр данного класса "router", а просто вызывать методы из данного класса
      */
 
+    protected static function removeQueryString ($url) { // Служебный метод для отсечения GET параметров (тегов и так далее - "?id=2&page=23") в адресе url (http://new-ishop.loc/page/view?id=2&page=23).
+
+        if ($url) {
+            $params = explode ('&', $url, 2); // Разбивка строки запроса "url" на два элемента массива по разделителю '&'
+            if (false === str_contains($params[0], '=')) { // str_contains — Определяет, содержит ли строка заданную подстроку
+                return rtrim ($params[0], '/'); // Удаляем, при наличии, концевой слеш '/'.
+
+            }
+
+        }
+        return '';
+
+    }
+
     public static function dispatch ($url) { // Метод принимает запросы "url"
 
         /*var_dump ($url); // Распечатаем то, что получаем в качестве аргумента "$url"*/
-
+        $url = self::removeQueryString ($url); // Вызываем метод для отсечения GET параметров в адресе url
         if (self::matchRoute ($url)) { // Если найдено соответствие с таблицей маршрутов - нам нужно сформировать объект для данного контроллера.
 
             $controller = 'app\controllers\\' . self::$route['admin_prefix'] . self::$route['controller'] . 'Controller'; // Формирование наименования (пути) контроллера. Все наши контроллеры должны иметь в конце постфикс 'Controller'. Мы будем в работе вызывать только те классы, у которых есть постфикс 'Controller'. (Например для главной страницы - "app\controllers\MainController", для админки - "app\controllers\admin\MainController")
