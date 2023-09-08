@@ -54,3 +54,25 @@
 =================
 [2023-09-07 12:36:00] Текст ошибки: Возникла ошибка | Файл: D:\OSPanel\domains\new-ishop.loc\public\index.php | Строка: 28
 =================
+[2023-09-08 12:59:05] Текст ошибки: Контроллер app\controllers\admin\MainController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 47
+=================
+[2023-09-08 13:50:36] Текст ошибки: Контроллер app\controllers\MainController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 53
+=================
+[2023-09-08 13:51:40] Текст ошибки: Контроллер app\controllers\MainController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 53
+=================
+[2023-09-08 13:51:41] Текст ошибки: Контроллер app\controllers\MainController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 53
+=================
+[2023-09-08 13:51:42] Текст ошибки: Контроллер app\controllers\MainController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 53
+=================
+[2023-09-08 13:52:41] Текст ошибки: Метод app\controllers\MainController::indexAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 49
+=================
+[2023-09-08 14:02:18] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 57
+=================
+[2023-09-08 14:02:25] Текст ошибки: Контроллер app\controllers\PageController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 53
+=================
+[2023-09-08 14:03:20] Текст ошибки: Метод app\controllers\PageController::viewAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 49
+=================
+[2023-09-08 14:05:17] Текст ошибки: Контроллер app\controllers\admin\MainController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 53
+=================
+[2023-09-08 14:06:52] Текст ошибки: Метод app\controllers\admin\MainController::indexAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 49
+=================

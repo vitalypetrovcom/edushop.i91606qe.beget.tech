@@ -26,15 +26,35 @@ class Router {
 
     }
 
+    /**
+     * Делаем статичные методы, чтобы не создавать экземпляр данного класса "router", а просто вызывать методы из данного класса
+     */
+
     public static function dispatch ($url) { // Метод принимает запросы "url"
-        // Делаем статичные методы, чтобы не создавать экземпляр данного класса "router", а просто вызывать методы из данного класса
 
         /*var_dump ($url); // Распечатаем то, что получаем в качестве аргумента "$url"*/
 
-        if (self::matchRoute ($url)) {
-            echo 'Ok';
+        if (self::matchRoute ($url)) { // Если найдено соответствие с таблицей маршрутов - нам нужно сформировать объект для данного контроллера.
+
+            $controller = 'app\controllers\\' . self::$route['admin_prefix'] . self::$route['controller'] . 'Controller'; // Формирование наименования (пути) контроллера. Все наши контроллеры должны иметь в конце постфикс 'Controller'. Мы будем в работе вызывать только те классы, у которых есть постфикс 'Controller'. (Например для главной страницы - "app\controllers\MainController", для админки - "app\controllers\admin\MainController")
+
+            if (class_exists ($controller)) { // Проверка существования контроллера: если есть - мы создаем экземпляр (объект) данного класса
+                $controllerObject = new $controller(self::$route);
+                $action = self::lowerCamelCase (self::$route['action'] . 'Action'); // Формирование наименования (пути) метода "action". Все наши методы "action" должны иметь в конце постфикс 'Action'. А если такого постфикса не будет - данный метод будет считаться служебным и вызваться никак не сможет.
+                if (method_exists ($controllerObject, $action)) { // Мы должны теперь это проверить с помощью функции method_exists
+
+                    $controllerObject->$action(); // Если метод существует - Вызываем данный метод
+
+                } else {
+                    throw new \Exception("Метод {$controller}::{$action} не найден!", 404); // Например "PageController::view" не найден! - Будем знать, что конкретно не найдено: "контроллер" или "метод" или вообще ничего.
+                }
+
+            } else {
+                throw new \Exception("Контроллер {$controller} не найден!", 404); // Выдаем исключение: ошибку 404 и сообщение "Контроллер не найден!"
+            }
+
         } else {
-            echo 'No';
+            throw new \Exception("Страница не найдена!", 404); // Не найдено соотвествие в таблице маршрутов и мы можем выдавать исключение, которое будет перехвачено нашим обработчиком - вернем ошибку 404 и сообщение "Страница не найдена!"
         }
 
     }
@@ -58,12 +78,13 @@ class Router {
                 if (!isset($route['admin_prefix'])) { // Проверка на наличие "admin_prefix" в запросе.
                     $route['admin_prefix'] = '';
                 } else { // Если он есть - мы к нему в конце добавим "\\" - они нужны для пространства имен (при работе с админкой)
-                    $route['admin_prefix'] = '\\';
+                    $route['admin_prefix'] .= '\\';
                 }
 
-                debug ($route);
+                /*debug ($route);*/
                 $route['controller'] = self::upperCamelCase ($route['controller']); //  Переводим "new-product" => "NewProduct"
-                debug ($route);
+                /*debug ($route);*/
+                self::$route = $route;
                 return true;
 
             }
