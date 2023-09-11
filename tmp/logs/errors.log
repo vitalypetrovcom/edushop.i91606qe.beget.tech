@@ -78,3 +78,9 @@
 =================
 [2023-09-08 14:57:40] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 61
 =================
+[2023-09-11 11:50:17] Текст ошибки: Call to undefined method app\controllers\PageController::getModel() | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 62
+=================
+[2023-09-11 11:50:17] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 78
+=================
+[2023-09-11 12:07:19] Текст ошибки: Typed property wfm\Controller::$model must not be accessed before initialization | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\MainController.php | Строка: 11
+=================
