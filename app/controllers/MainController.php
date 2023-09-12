@@ -2,12 +2,18 @@
 
 namespace app\controllers;
 
+use app\models\Main;
 use wfm\Controller;
+
+/** @property Main $model */
 
 class MainController extends Controller {
 
     public function indexAction () { // Метод для отработки "indexAction"
-        $names = ['John', 'Dave', 'Katy'];
+//        $names = ['John', 'Dave', 'Katy'];
+
+        $names = $this->model->get_names (); // Выборка всех данных, используя RedBeanPHP оператор "findAll" из таблицы "names" БД "newishop"
+
         $this->setMeta ('Главная страница', 'Описание ...', 'Ключевые слова ...');
 //        $this->set (['test' => 'TEST VAR', 'name' => 'John']);  // Передаем переменную методом "set". Так мы можем передавать данные из контроллера в соответствующее представление views
 //        $this->set (['names' => $names]);
