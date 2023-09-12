@@ -14,6 +14,8 @@ abstract class Controller { // Создаем абстрактный класс 
 
     public function __construct (public $route = []) {
 
+
+
     }
 
     public function getModel () { // Мы получим модель, если таковая создана (например, для контроллера "Main" есть соответствующая модель "Main"
@@ -25,7 +27,10 @@ abstract class Controller { // Создаем абстрактный класс 
     }
 
     public function getView () { // Формируем вид для отображения в браузере
-        $this->view = $this->view ?: $this->route['action'];
+        $this->view = $this->view ?: $this->route['action']; // Проверяем, не переопределили ли мы свойство "view" - если переопределили, то используем его, если нет - тогда запишем в него данные из свойства "route" по ключу "action" (название вида берется из названия экшна).
+
+        (new View($this->route, $this->layout, $this->view, $this->meta))->render ($this->data); // Формируем экземпляр вида класса "View", передаем в него данные для представления (маршрут "route", шаблон "layout", вид "view" и мета данные "meta") и вызываем метод "render" - для вывода представления, в который передается массив с данными "data"
+
     }
 
     public function set ($data) { // Метод, чтобы складывать данные в массив "$data" из БД

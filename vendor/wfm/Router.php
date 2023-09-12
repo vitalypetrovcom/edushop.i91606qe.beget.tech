@@ -57,14 +57,15 @@ class Router {
             if (class_exists ($controller)) { // Проверка существования контроллера: если есть - мы создаем экземпляр (объект) данного класса
 
                 /** @var Controller $controllerObject */ // Мы здесь указали, что у нас переменная "$controllerObject" оно является объектом класса "Controller"
-                $controllerObject = new $controller(self::$route); // Передаем в объект (в конструктор контроллера) текущий маршрут
+                $controllerObject = new $controller(self::$route); // Передаем в объект (в конструктор контроллера) текущий маршрут. Все создаваемые контроллеры будут наследовать данные базового ядра 'Controller' (self::$route)
 
                 $controllerObject->getModel (); // Мы вызвали метод "getModel", который у нас для свойства "model" записал какой-либо объект
 
                 $action = self::lowerCamelCase (self::$route['action'] . 'Action'); // Формирование наименования (пути) метода "action". Все наши методы "action" должны иметь в конце постфикс 'Action'. А если такого постфикса не будет - данный метод будет считаться служебным и вызваться никак не сможет.
                 if (method_exists ($controllerObject, $action)) { // Мы должны теперь это проверить с помощью функции method_exists
 
-                    $controllerObject->$action(); // Если метод существует - Вызываем данный метод
+                    $controllerObject->$action(); // Если метод существует - Вызываем данный метод.
+                    $controllerObject->getView (); // Вызываем метод "getView" для вывода вида. В "action" мы можем переопределить вид (если нам нужно, если нет, то по умолчанию у нас отрабатывает следующее соглашение: вид находится в папке с названием контроллера и соответствует названию экшена - если контроллер называется "MainController", тогда папка с видом будет называться "Main", если экшн в этом контроллере называется "index", тогда вид будет называться "index" (файл index.php)
 
                 } else {
                     throw new Exception("Метод {$controller}::{$action} не найден!", 404); // Например "PageController::view" не найден! - Будем знать, что конкретно не найдено: "контроллер" или "метод" или вообще ничего.
@@ -85,7 +86,7 @@ class Router {
         foreach (self::$routes as $pattern => $route) {
 
 
-            if (preg_match ("#{$pattern}#i", $url, $matches)) { // "#$pattern#" - Шаблон регулярного выражения должен иметь ограничители шаблона (например "#") с тем, чтобы понимать, что после этих ограничителей идет сам шаблон, можно поставить флаг "i" ("#{$pattern}#i") - делает наш шаблон регистронезависимым (по необходимости)
+            if (preg_match ("#{$pattern}#", $url, $matches)) { // "#$pattern#" - Шаблон регулярного выражения должен иметь ограничители шаблона (например "#") с тем, чтобы понимать, что после этих ограничителей идет сам шаблон, можно поставить флаг "i" ("#{$pattern}#i") - делает наш шаблон регистронезависимым (по необходимости)
                 /*debug ($route); // Для проверки как отрабатываются правила маршрутов
                 debug ($matches);*/
                 foreach ($matches as $k => $v) { // Выбираем из массива строковые ключи
@@ -127,7 +128,7 @@ class Router {
         $name = ucwords ($name); // new product => New Product
         $name = str_replace (' ', '', $name); // New Product => NewProduct*/
 
-        return $name = str_replace (' ', '', ucwords (str_replace ('-', ' ', $name))); // В одной строке: new-product => NewProduct
+        return str_replace (' ', '', ucwords (str_replace ('-', ' ', $name))); // В одной строке: new-product => NewProduct
 
     }
 
@@ -139,14 +140,5 @@ class Router {
         return lcfirst (self::upperCamelCase ($name)); // NewProduct => newProduct
 
     }
-
-
-
-
-
-
-
-
-
 
 }

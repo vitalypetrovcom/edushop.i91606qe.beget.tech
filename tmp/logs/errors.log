@@ -84,3 +84,155 @@
 =================
 [2023-09-11 12:07:19] Текст ошибки: Typed property wfm\Controller::$model must not be accessed before initialization | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\MainController.php | Строка: 11
 =================
+[2023-09-11 15:38:25] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:38:29] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:39:00] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:41:24] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:41:25] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:41:57] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:43:39] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:43:40] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:45:58] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:45:59] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:45:59] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:46:00] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-11 15:46:00] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-12 09:54:24] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/view/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-12 09:54:24] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
+[2023-09-12 10:03:33] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 34
+=================
+[2023-09-12 10:06:12] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:06:13] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:24] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:25] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:25] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:25] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:26] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:26] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:27] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:28] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:31] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:31] Текст ошибки: Class "wfm\Exception" not found | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
+[2023-09-12 10:14:32] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:14:32] Текст ошибки: Class "wfm\Exception" not found | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
+[2023-09-12 10:18:06] Текст ошибки: Контроллер app\controllers\ProductController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
+=================
+[2023-09-12 10:22:22] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:22:23] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:22:23] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:22:23] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:25:15] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:25:16] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:25:16] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:25:17] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:27:05] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:27:06] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:27:06] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:27:06] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:27:07] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:27:15] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
+[2023-09-12 10:27:27] Текст ошибки: Call to undefined method app\controllers\PageController::getModel() | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 62
+=================
+[2023-09-12 10:27:44] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:28:27] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:28:27] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:30:37] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:30:37] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:30:42] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:30:43] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:30:43] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:30:43] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:30:43] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:30:44] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:30:44] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:30:44] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:31:04] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:31:05] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:31:57] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:31:58] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:31:58] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:31:58] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:31:59] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:31:59] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:31:59] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:31:59] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:37:50] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:37:51] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:37:51] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Main/index.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 36
+=================
+[2023-09-12 10:38:58] Текст ошибки: Не найден шаблон D:\OSPanel\domains\new-ishop.loc/app/views/layouts/ishop.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 45
+=================
+[2023-09-12 10:42:48] Текст ошибки: Не найден шаблон D:\OSPanel\domains\new-ishop.loc/app/views/layouts/test2.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 45
+=================
+[2023-09-12 10:43:08] Текст ошибки: Не найден шаблон D:\OSPanel\domains\new-ishop.loc/app/views/layouts/default.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 45
+=================
+[2023-09-12 11:48:45] Текст ошибки: Не найден шаблон D:\OSPanel\domains\new-ishop.loc/app/views/layouts/default.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 45
+=================
