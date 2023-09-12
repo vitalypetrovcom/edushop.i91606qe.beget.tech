@@ -236,3 +236,9 @@
 =================
 [2023-09-12 11:48:45] Текст ошибки: Не найден шаблон D:\OSPanel\domains\new-ishop.loc/app/views/layouts/default.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 45
 =================
+[2023-09-12 15:13:16] Текст ошибки: Undefined variable $test | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Main\index.php | Строка: 3
+=================
+[2023-09-12 16:09:03] Текст ошибки: Undefined variable $test | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Main\index.php | Строка: 3
+=================
+[2023-09-12 16:09:46] Текст ошибки: Array to string conversion | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Main\index.php | Строка: 4
+=================

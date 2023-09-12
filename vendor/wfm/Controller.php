@@ -33,11 +33,11 @@ abstract class Controller { // Создаем абстрактный класс 
 
     }
 
-    public function set ($data) { // Метод, чтобы складывать данные в массив "$data" из БД
+    public function set ($data) { // Метод, чтобы складывать данные в массив "$data" из БД и других источников
         $this->data = $data;
     }
 
-    public function setMeta ($title = '', $description = '', $keywords = '') { // Метод, чтобы записать в "meta" соответствующие переменные
+    public function setMeta ($title = '', $description = '', $keywords = '') { // Метод, чтобы записать в "meta" соответствующие переменные (данные)
         $this->meta = [
             'title' => $title,
             'description' => $description,

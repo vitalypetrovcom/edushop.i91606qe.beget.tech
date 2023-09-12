@@ -12,7 +12,7 @@ use wfm\View; // Импортируем(подключаем) класс вид�
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IShop</title>
+    <?= $this->getMeta () ?>
 </head>
 <body>
 
