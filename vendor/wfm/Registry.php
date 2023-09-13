@@ -4,7 +4,7 @@
 namespace wfm;
 
 
-class Registry {
+class Registry { // Класс Реестр - необходим для сбора(записи) всех данных от запросов пользователя в контейнер
 
     use TSingleton; // Подключаем трейт "TSingleton"
 

@@ -17,7 +17,9 @@
 
 namespace wfm;
 
-class View {
+use RedBeanPHP\R;
+
+class View { // Класс для подготовки представления вида в браузере
 
     public string $content = ''; // Данное свойство нужно для создания контентной (изменяемой, в отличие от шаблона) части сайта со всеми переменными, которые мы в нее передаем. Этот контент будет подключаться к существующему шаблону (в нем определены (неизменны): header, footer, sidebars итд.)
 
@@ -67,6 +69,32 @@ class View {
         $out .= '<meta name="description" content="' . h ( $this->meta[ 'description' ] ) . '">' . PHP_EOL;
         $out .= '<meta name="keywords" content="' . h ( $this->meta[ 'keywords' ] ) . '">' . PHP_EOL;
         return $out;
+
+    }
+
+    public function getDbLogs () { // Собираем логи из БД
+        if (DEBUG) {
+            $logs = R::getDatabaseAdapter()
+                ->getDatabase()
+                ->getLogger();
+
+            $logs = array_merge ($logs->grep('SELECT'), $logs->grep('select'), $logs->grep('INSERT'), $logs->grep('UPDATE'), $logs->grep('DELETE'));   // Объединяем логи (массивы) всех типов запросов в единый массив. Написание операторов CRUD в запросах РЕГИСТРОЗАВИСИМО (ЗАГЛАВНЫЕ 'SELECT' или прописные буквы 'select' - это разные запросы)!
+            debug ($logs);
+        }
+    }
+
+    public function getPart ($file, $data = null) { // Метод для подключения частей шаблона представления (хедер, футер, сайдбар итд.) по частям. "$file" - файл с частью шаблона, "$data" - дополнительные данные
+
+        if (is_array ($data)) { // Проверим, если у нас $data это массив
+            extract ($data); // Мы можем извлечь из него необходимые данные и эти данные будут доступны в подключаемом шаблоне
+        }
+        $file = APP . "/views/{$file}.php";   // Формируем путь к этому подключаемому шаблону
+        if (is_file ($file)) { // Проверка на существование файла
+            require $file; // Если файл есть, мы его подключаем
+        } else {
+            echo "File {$file} not found!";
+        }
+
 
     }
 

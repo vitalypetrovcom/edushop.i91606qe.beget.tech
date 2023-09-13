@@ -244,3 +244,11 @@
 =================
 [2023-09-12 18:52:43] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
 =================
+[2023-09-13 09:22:42] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
+[2023-09-13 11:03:27] Текст ошибки: require(/parts/header.php): Failed to open stream: No such file or directory | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\layouts\ishop.php | Строка: 9
+=================
+[2023-09-13 11:03:51] Текст ошибки: require(/views/parts/header.php): Failed to open stream: No such file or directory | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\layouts\ishop.php | Строка: 9
+=================
+[2023-09-13 11:04:11] Текст ошибки: require(/views/parts/header.php): Failed to open stream: No such file or directory | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\layouts\ishop.php | Строка: 9
+=================

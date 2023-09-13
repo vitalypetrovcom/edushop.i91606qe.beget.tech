@@ -5,10 +5,10 @@ use wfm\View; // Импортируем(подключаем) класс вид�
 /** @var $this View */
 
 ?>
-<?php $this->getPart ('parts/header');?>
-
-
-<?= $this->content; ?>
-
-
-<?php $this->getPart ('parts/footer');?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <?= $this->getMeta () ?>
+</head>
+<body>
