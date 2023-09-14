@@ -104,7 +104,7 @@ use wfm\View; // Импортируем(подключаем) класс вид�
     </div>
 </div>
 
-<?php //$this->getDbLogs (); ?>
+<?php $this->getDbLogs (); ?>
 
 <script>
     const PATH = '<?= PATH ?>';
