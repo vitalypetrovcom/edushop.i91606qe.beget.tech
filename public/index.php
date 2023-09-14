@@ -16,7 +16,6 @@ new \wfm\App();
 //var_dump (\wfm\App::$app->getProperties ());
 
 
-
 /**
  * Как работает цепочка файлов (index.php -> init.php -> TSingleton.php -> Registry.php -> App.php -> params.php):
  * 1. Подключаем конфигурацию во фронтконтроллере "require_once dirname ( __DIR__ ) . '/config/init.php';" и создаем экземпляр класса "Арр" - "new \wfm\App();"
