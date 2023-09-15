@@ -27,10 +27,14 @@ Router::add ('^admin/?$', ['controller' => 'Main', 'action' => 'index', 'admin_p
 
 Router::add ('^admin/(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['admin_prefix' => 'admin']); // Маршрут для прочих страниц админки.
 
+/** Правила маршрутизации для страниц продуктов */
+Router::add ('^product/(?P<slug>[a-z0-9-]+)/?$', ['controller' => 'Product', 'action' => 'view']);
+
+
 /**
  * Правила для клиентской части сайта по умолчанию (default) (вторичны):
  */
-Router::add ('^$', ['controller' => 'Main', 'action' => 'index']); // Маршрут(правило) для главной страницы. "action" по умолчанию всегда у нас будет "index"
+Router::add ('^$', ['controller' => 'Main', 'action' => 'index']); // Маршрут(правило) для главной страницы, "action" по умолчанию всегда у нас будет "index"
 
 Router::add ('^(?P<controller>[a-z-]+)/(?P<action>[a-z-]+)/?$'); // (?P<controller>[a-z-]+) - означает, что будет присутствовать набор символов, которые мы запишем с именоваными ключами "<controller>" и "<action>" соотвественно (мы создаем данные ключи в массиве при выполнении функции preg_match). Те, если у нас url - http://new-ishop.loc/page/view - то "page" у нас попадет в первый карман (выражение в скобках) - "(?P<controller>[a-z-]+)", а "view" попадет у нас во второй карман "(?P<action>[a-z-]+)/?$')".
 

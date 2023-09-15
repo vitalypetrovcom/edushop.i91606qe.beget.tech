@@ -65,7 +65,7 @@ class View { // Класс для подготовки представлени�
     }
 
     public function getMeta () { // Данный метод будет формировать для нас вывод мета - тегов
-        $out = '<title>' . h ( $this->meta[ 'title' ] ) . '</title>' . PHP_EOL;
+        $out = '<title>' . App::$app->getProperty ('site_name') . ' | ' . h ( $this->meta[ 'title' ] ) . '</title>' . PHP_EOL;
         $out .= '<meta name="description" content="' . h ( $this->meta[ 'description' ] ) . '">' . PHP_EOL;
         $out .= '<meta name="keywords" content="' . h ( $this->meta[ 'keywords' ] ) . '">' . PHP_EOL;
         return $out;
@@ -74,12 +74,14 @@ class View { // Класс для подготовки представлени�
 
     public function getDbLogs () { // Собираем логи из БД
         if (DEBUG) {
-            $logs = R::getDatabaseAdapter()
-                ->getDatabase()
-                ->getLogger();
 
-            $logs = array_merge ($logs->grep('SELECT'), $logs->grep('select'), $logs->grep('INSERT'), $logs->grep('UPDATE'), $logs->grep('DELETE'));   // Объединяем логи (массивы) всех типов запросов в единый массив. Написание операторов CRUD в запросах РЕГИСТРОЗАВИСИМО (ЗАГЛАВНЫЕ 'SELECT' или прописные буквы 'select' - это разные запросы)!
-            debug ($logs);
+                $logs = R::getDatabaseAdapter()
+                    ->getDatabase()
+                    ->getLogger();
+
+                $logs = array_merge ($logs->grep('SELECT'), $logs->grep('select'), $logs->grep('INSERT'), $logs->grep('UPDATE'), $logs->grep('DELETE'));   // Объединяем логи (массивы) всех типов запросов в единый массив. Написание операторов CRUD в запросах РЕГИСТРОЗАВИСИМО (ЗАГЛАВНЫЕ 'SELECT' или прописные буквы 'select' - это разные запросы)!
+                debug ($logs);
+
         }
     }
 

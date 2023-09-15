@@ -2,12 +2,20 @@
 
 namespace app\controllers;
 
+use app\models\AppModel;
+use app\widgets\language\Language;
+use wfm\App;
 use wfm\Controller;
 
 class AppController extends Controller { // Создаем базовый контроллер приложения "AppController" (в папке "app"), который наследует базовый контроллер фреймворка "Controller" (в папке "vendor").
 
     public function __construct ( $route ) { // Метод для автоматического подключения к БД
         parent::__construct ( $route );
+        new AppModel(); // Создаем новый объект "AppModel" (чтобы не выдавало ошибку на странице продукта (Текст ошибки: Call to a member function getDatabase() on null, Файл - View.php, Строка - 79) без наличия соединения с БД
+
+        App::$app->setProperty ('languages', Language::getLanguages ());  // Записываем языки в контейнер
+//        debug (App::$app->getProperty ('languages'));
+
     }
 
 }
