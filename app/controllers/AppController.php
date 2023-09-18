@@ -14,7 +14,10 @@ class AppController extends Controller { // Создаем базовый кон
         new AppModel(); // Создаем новый объект "AppModel" (чтобы не выдавало ошибку на странице продукта (Текст ошибки: Call to a member function getDatabase() on null, Файл - View.php, Строка - 79) без наличия соединения с БД
 
         App::$app->setProperty ('languages', Language::getLanguages ());  // Записываем языки в контейнер
-//        debug (App::$app->getProperty ('languages'));
+        App::$app->setProperty ('language', Language::getLanguage (App::$app->getProperty ('languages')));   // Записываем активный язык на сайте в контейнер
+//        debug (App::$app->getProperty ('languages')); // Выводим Список доступных языков
+//        debug (Language::getLanguage (App::$app->getProperty ('languages'))); // Запрашиваемый пользователем в адресной строке язык
+//        debug (App::$app->getProperty ('language')); // Выводим Активный язык сайта
 
     }
 

@@ -28,7 +28,7 @@ Router::add ('^admin/?$', ['controller' => 'Main', 'action' => 'index', 'admin_p
 Router::add ('^admin/(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['admin_prefix' => 'admin']); // Маршрут для прочих страниц админки.
 
 /** Правила маршрутизации для страниц продуктов */
-Router::add ('^product/(?P<slug>[a-z0-9-]+)/?$', ['controller' => 'Product', 'action' => 'view']);
+Router::add ('^(?P<lang>[a-z]+)?/?product/(?P<slug>[a-z0-9-]+)/?$', ['controller' => 'Product', 'action' => 'view']); // На странице продукта в начале адресной строки, нам необходимо предусмотреть, чтобы перед словом "product" выводилась информация о языке (../en/product...). Эта информация может быть, а может не быть.
 
 
 /**

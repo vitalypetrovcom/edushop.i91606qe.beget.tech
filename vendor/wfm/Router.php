@@ -52,6 +52,10 @@ class Router {
         $url = self::removeQueryString ($url); // Вызываем метод для отсечения GET параметров в адресе url
         if (self::matchRoute ($url)) { // Если найдено соответствие с таблицей маршрутов - нам нужно сформировать объект для данного контроллера.
 
+            if (!empty(self::$route['lang'])) { // Проверяем есть ли указание на использование конкретного языка на странице продукта
+                App::$app->setProperty ('lang', self::$route['lang']); // Записываем в контейнер возможный код языка
+            }
+
             $controller = 'app\controllers\\' . self::$route['admin_prefix'] . self::$route['controller'] . 'Controller'; // Формирование наименования (пути) контроллера. Все наши контроллеры должны иметь в конце постфикс 'Controller'. Мы будем в работе вызывать только те классы, у которых есть постфикс 'Controller'. (Например для главной страницы - "app\controllers\MainController", для админки - "app\controllers\admin\MainController")
 
             if (class_exists ($controller)) { // Проверка существования контроллера: если есть - мы создаем экземпляр (объект) данного класса
