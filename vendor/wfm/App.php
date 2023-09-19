@@ -12,9 +12,9 @@ class App {
 
         $query = trim (urldecode ($_SERVER['QUERY_STRING']), '/');   // Текущий url-адрес
 
-        new ErrorHandler(); // Обьект для отлавливания ошибок
+        new ErrorHandler(); // Объект для отлавливания ошибок
 
-        self::$app = Registry::getInstance (); // Записываем в наш контейнер обьект класса реестр "Registry" через "getInstance" и здесь нам будут доступны методы "setProperty" и "getProperty"
+        self::$app = Registry::getInstance (); // Записываем в наш контейнер объект класса реестр "Registry" через "getInstance" и здесь нам будут доступны методы "setProperty" и "getProperty"
 
         $this->getParams ();
 
