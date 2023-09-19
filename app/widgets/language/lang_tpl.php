@@ -6,11 +6,11 @@
     <ul class="dropdown-menu" id="languages">
         <?php foreach ($this->languages as $k => $v): ?>  <!--В ключе "k" - содержится код языка, в значении "v" - вся остальная информация об языке-->
             <?php if (\wfm\App::$app->getProperty ('language')['code'] == $k) continue; ?> <!-- Если это условие сработает, значит этот язык уже является активным текущим языком и мы его пропускаем -->
+            <li>
+                <button class="dropdown-item" data-langcode="<?= $k ?>">
+                    <img src="<?= PATH ?>/assets/img/lang/<?= $k ?>.png" alt="">
+                    <?= $v['title'] ?></button>
+            </li>
         <?php endforeach; ?>
-        <li>
-            <button class="dropdown-item" data-langcode="<?= $k ?>">
-                <img src="<?= PATH ?>/assets/img/lang/<?= $k ?>.png" alt="">
-                <?= $v['title'] ?></button>
-        </li>
     </ul>
 </div>
