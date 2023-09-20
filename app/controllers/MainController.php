@@ -5,12 +5,20 @@ namespace app\controllers;
 use app\models\Main;
 use RedBeanPHP\R;
 use wfm\App;
+use wfm\Cache;
 
 /** @property Main $model */
 
 class MainController extends AppController {
 
     public function indexAction () { // Метод для отработки "indexAction"
+
+//        $test = 'Hello!'; // Вводим переменную
+//        $cache = Cache::getInstance (); // Получаем объект кэша
+//        $cache->set ('test', $test, 30);  // Записываем переменную "$test" с ключом "test" методом "set" в кэш на 30 сек
+//        var_dump ($cache->get ('test'));  // Мы должны получить данные по ключу "test" из кэша методом "get"
+//        var_dump ($test);
+
 
        $lang = App::$app->getProperty ('language'); // Переменная с данными по активному текущему языку сайта
 
