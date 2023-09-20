@@ -12,7 +12,7 @@ class MainController extends AppController {
 
     public function indexAction () { // Метод для отработки "indexAction"
 
-        $lang = App::$app->getProperty ('language'); // Переменная с данными по активному текущему языку сайта
+       $lang = App::$app->getProperty ('language'); // Переменная с данными по активному текущему языку сайта
 
         $slides = R::findAll ('slider'); // Мы должны получить все наши слайды
 
@@ -21,7 +21,7 @@ class MainController extends AppController {
 
         $this->set (compact ('slides', 'products')); // Передаем полученные данные в вид
 
-        $this->setMeta ("Главная страница", 'Описание ...', 'Ключевые слова ...');
+        $this->setMeta (___ ('main_index_meta_title'), ___ ('main_index_meta_description'), ___ ('main_index_meta_keywords'));
 
     }
 

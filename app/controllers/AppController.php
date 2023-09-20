@@ -19,6 +19,10 @@ class AppController extends Controller { // Создаем базовый кон
 //        debug (Language::getLanguage (App::$app->getProperty ('languages'))); // Запрашиваемый пользователем в адресной строке язык
 //        debug (App::$app->getProperty ('language')); // Выводим Активный язык сайта
 
+        $lang = App::$app->getProperty ('language'); // Переменная с данными по текущему активному языку на сайте
+       \wfm\Language::load ($lang['code'], $this->route);
+
+
     }
 
 }
