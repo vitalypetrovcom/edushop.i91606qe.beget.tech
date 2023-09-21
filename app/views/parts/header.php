@@ -75,7 +75,11 @@ use wfm\View; // Импортируем(подключаем) класс вид�
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <?php new \app\widgets\menu\Menu([ /* Подключаем виджет главного меню категорий */
+                            'class' => 'navbar-nav ms-auto mb-2 mb-lg-0',
+                            'cache' => 30,
+                        ]) ?>
+                        <!--<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link" href="category.html">Компьютеры</a>
                             </li>
@@ -97,7 +101,7 @@ use wfm\View; // Импортируем(подключаем) класс вид�
                             <li class="nav-item">
                                 <a class="nav-link" href="category.html">Камеры</a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </div>
 
                 </div>
