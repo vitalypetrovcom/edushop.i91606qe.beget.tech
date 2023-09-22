@@ -2,6 +2,14 @@ $(function() {
 
 	/* CART */ /*Здесь будут функции, которые относятся к работе корзины */
 
+	function showCart(cart) { /* Метод, который будет показывать содержимое корзины */
+		$('#cart-modal .modal-cart-content').html(cart); // Обращаемся к id #cart-modal и внутри ищем класс .modal-cart-content. Методом html вставляем нашу корзину cart
+		const myModalEl = document.querySelector('#cart-modal'); // Подготавливаем наше модальное окно используя bootstrap методом getOrCreateInstance
+		const modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
+		modal.show(); // Выводим наше модальное окно
+
+	}
+
 	$('.add-to-cart').on('click', function (e) { // К классу "add-to-cart" будем привязываться: отслеживаем события по клику 'click' и по этому событию будем выполнять функцию
 		e.preventDefault(); // Отменяем дефолтное поведение ссылки (переход по ссылке)
 		const id = $(this).data('id'); // Берем id товара
@@ -15,7 +23,8 @@ $(function() {
 			type: 'GET',  // Метод передачи данных
 			data: {id: id, qty: qty}, // Данные, которые мы будем отправлять (объект)
 			success: function (res) { // success - что мы будем делать в случае успеха, выполняем функцию, результат выполнения которой мы сохраним в переменную res
-				console.log(res);
+				/*console.log(res);*/ /* Вывод в консоль браузера */
+				showCart(res) /* Вывод содержимого корзины в браузер */
 			},
 			error: function () { // В случае ошибки, мы выведем сообщение об ошибке
 				alert('Error!');

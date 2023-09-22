@@ -50,6 +50,14 @@ abstract class Controller { // Создаем абстрактный класс 
         return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
     }
 
+    public function loadView($view, $vars = []) { // Метод подключения вида представления. Принимает $view - вид, который нужно подключить, $vars - массив данных для данного вида (опционально). Данный метод будет отрабатывать только в ответ на Ajax запрос
 
+        extract ($vars); // Импорт переменных в массив
+        $prefix = str_replace ( '\\', '/', $this->route[ 'admin_prefix' ] ); // Меняем в адресе запроса обратный слэш на прямой слэш (admin\ => admin/).
+
+        require APP . "/views/{$prefix}{$this->route['controller']}/{$view}.php"; // Формируем путь к нужному файлу и подключаем этот вид
+
+        die; // Завершаем выполнение
+    }
 
 }

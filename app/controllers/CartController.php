@@ -27,7 +27,9 @@ class CartController extends AppController { // Контроллер для ра
         $this->model->add_to_cart ($product, $qty); // Обращаемся к модели model и добавляем товар в корзину
 
         if ($this->isAjax ()) { // Проверяем, отправлялся ли запрос методом Ajax или нет? тогда мы должны подключить какой-либо вид без шаблона, и у нас этот вид вернется в ответ на Ajax запрос
-             debug ($_SESSION['cart'], 1);
+             /*debug ($_SESSION['cart'], 1);*/
+            $this->loadView ('cart_modal'); // Подключаем вид методом loadView с названием 'cart_modal' через require. Тк контроллер называется Cart, то данный вид будет искаться в папке views/Cart. Это будет ответ на Ajax запрос
+
         }
         redirect (); // Иначе, выполняем редирект и пользователь будет возвращен на ту же страницу, с которой он к нам пришел
         return true;
