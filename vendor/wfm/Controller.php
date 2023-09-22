@@ -45,5 +45,11 @@ abstract class Controller { // Создаем абстрактный класс 
         ];
     }
 
+    public function isAjax(): bool // Стандартный метод, который определяет, отправлялся ли запрос методом Ajax или нет и возвращает в результате true | false
+    {
+        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
+    }
+
+
 
 }

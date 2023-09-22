@@ -14,6 +14,8 @@ class App {
 
         new ErrorHandler(); // Объект для отлавливания ошибок
 
+        session_start (); // Стартуем запись данных в сессию (в массив $_SESSION)
+
         self::$app = Registry::getInstance (); // Записываем в наш контейнер объект класса реестр "Registry" через "getInstance" и здесь нам будут доступны методы "setProperty" и "getProperty"
 
         $this->getParams ();
