@@ -20,7 +20,7 @@
                 <td><a href="product/<?= $item['slug'] ?>"><?= $item['title'] ?></a></td>
                 <td><?= $item['qty'] ?></td>
                 <td>$<?= $item['price'] ?></td>
-                <td><a href="cart/delete?id=<?= $id ?>" class="del-item"><i class="far fa-trash-alt"></i></a></td>
+                <td><a href="cart/delete?id=<?= $id ?>" data-id="<?= $id ?>" class="del-item"><i class="far fa-trash-alt"></i></a></td>
             </tr>
             <?php endforeach; ?>
             <tr>
@@ -35,7 +35,7 @@
         </table>
     </div>
     <?php else:  ?>    <!-- Иначе, выведем "Empty cart!" -->
-    <h4 class="text-start">Empty cart!</h4>
+    <h4 class="text-start"><?php __ ('tpl_cart_empty') ?></h4>
     <?php endif; ?>
 </div>
 <div class="modal-footer">
@@ -43,7 +43,7 @@
 
     <?php if (!empty($_SESSION['cart'])): ?>  <!-- Условие выполнения - Если у нас есть что-то в корзине, мы будем выводить $_SESSION['cart'] -->
     <button type="button" class="btn btn-primary"><?php __ ('tpl_cart_btn_order'); ?></button> <!-- Кнопка выводится когда в корзине есть товары (не пуста) -->
-        <button type="button" class="btn btn-danger"><?php __ ('tpl_cart_btn_clear'); ?></button> <!-- Кнопка выводится когда в корзине есть товары (не пуста) -->
+        <button type="button" id="clear-cart" class="btn btn-danger"><?php __ ('tpl_cart_btn_clear'); ?></button> <!-- Кнопка выводится когда в корзине есть товары (не пуста) -->
     <?php endif; ?>
 </div>
 

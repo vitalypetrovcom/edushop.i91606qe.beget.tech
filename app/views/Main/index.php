@@ -38,7 +38,7 @@ use wfm\View; // Импортируем(подключаем) класс вид�
 
 <?php endif; ?>
 
-<?php debug ($_SESSION); ?>
+<?php //debug ($_SESSION); ?> <!-- Распечатка данных из "$_SESSION"-->
 
 <?php if (!empty($products)): ?>
 <section class="featured-products">

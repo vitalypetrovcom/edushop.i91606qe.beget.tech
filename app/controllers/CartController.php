@@ -40,4 +40,28 @@ class CartController extends AppController { // Контроллер для ра
         $this->loadView ('cart_modal'); // Подключаем вид методом loadView с названием 'cart_modal' через require. Тк контроллер называется Cart, то данный вид будет искаться в папке views/Cart. Это будет ответ на Ajax запрос
     }
 
+    public function deleteAction () { // Метод удаления товара из корзины в модальном окне
+        $id = get ( 'id' ); // Принимаем "$id" товара, который передается методом "get"
+        if ( isset( $_SESSION[ 'cart' ][ $id ] )) { // Проверка на наличие "id" товара в глобальном массиве "$_SESSION" по ключу "['cart'][$id]"
+            $this->model->delete_item ($id); // Удаляем товар методом "delete_item"
+        }
+        if ( $this->isAjax () ) { // Проверяем, отправлялся ли запрос методом Ajax или нет?
+            /*debug ($_SESSION['cart'], 1);*/
+            $this->loadView ( 'cart_modal' ); // Подключаем вид методом loadView с названием 'cart_modal' через require.
+        }
+        redirect (); // Выполняем redirect если запрос не был выполнен методом Ajax
+    }
+
+    public function clearAction () { // Метод удаления всех товаров из корзины (очищение корзины) в модальном окне
+        if (empty($_SESSION['cart'])) { // Проверка, если у нас пусто в "$_SESSION['cart'])" (наша корзина пуста), тогда
+            return false;
+        }
+        unset($_SESSION['cart']);  // Иначе, мы должны очистить корзину: очищаем "$_SESSION['cart'])" - удаляем товары
+        unset($_SESSION['cart.qty']);  // Иначе, мы должны очистить корзину: очищаем "$_SESSION['cart.qty'])" - итоговое количество
+        unset($_SESSION['cart.sum']);  // Иначе, мы должны очистить корзину: очищаем "$_SESSION['cart.sum'])" - итоговую сумму
+        $this->loadView ( 'cart_modal' ); // Подключаем вид методом loadView с названием 'cart_modal' через require.
+        return true;
+    }
+
+
 }
