@@ -80,7 +80,15 @@ function ___ ( $key ) { // Функция для возврата перевод
 
 }
 
+function get_cart_icon ($id) { // Функция сохранения вида иконки статуса добавления товара в корзину (с добавить НА товар уже в корзине). На вход принимает $id товара
+    if (!empty($_SESSION['cart']) && array_key_exists ($id, $_SESSION['cart'])) { // Проверка: корзина (массив $_SESSION['cart']) не должна быть пуста И есть ли у нас такой ключ в массиве $_SESSION['cart']
+        $icon = '<i class="fas fa-luggage-cart"></i>'; // Товар находится в корзине
+    } else { // Иначе,
+        $icon = '<i class="fas fa-shopping-cart"></i>'; // Добавить товар в корзину
+    }
+    return $icon;
 
+}
 
 
 

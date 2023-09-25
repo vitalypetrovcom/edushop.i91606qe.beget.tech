@@ -83,6 +83,8 @@ $(function() {
 			success: function (res) { // success - что мы будем делать в случае успеха, выполняем функцию, результат выполнения которой мы сохраним в переменную res
 				/*console.log(res);*/ /* Вывод в консоль браузера */
 				showCart(res); /* Вывод содержимого корзины в браузер */
+				$this.find('i').removeClass('fa-shopping-cart').addClass('fa-luggage-cart');
+				// $this указывает на текущий объект события
 			},
 			error: function () { // В случае ошибки, мы выведем сообщение об ошибке
 				alert('Error!');

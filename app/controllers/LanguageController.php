@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Cart;
 use wfm\App;
 
 class LanguageController extends AppController { // Контроллер приложения для работы с языками
@@ -34,6 +35,8 @@ class LanguageController extends AppController { // Контроллер при�
                 }
                 /*var_dump ($url_parts);
                 die;*/
+
+                Cart::translate_cart (App::$app->getProperty ('languages')[$lang]); // Обращаемся к классу модели Cart и методу "translate_cart" и передаем активный язык из контейнера App::$app->getProperty ('languages')[$lang]
 
                 $url = PATH . '/' . implode ('/', $url_parts);  // Соберем из массива "$url_parts" строку с разделителем "/"
                 /*var_dump ('http://new-ishop.loc/en/product/apple');
