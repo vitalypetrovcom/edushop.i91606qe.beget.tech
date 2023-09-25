@@ -12,7 +12,7 @@ class CartController extends AppController { // Контроллер для ра
 
         $lang = App::$app->getProperty ('language'); // Берем язык из контейнера "App::$app->getProperty" по ключу 'language'
         $id = get ('id'); // Получаем данные по ключу 'id' используя функцию "get"
-        $qty = get ('qty'); //  - - -
+        $qty = get ('qty'); //  - 'qty' -
 
         if (!$id) { // Проверка: если в $id будет что-то не являющееся числом, тогда дальнейшая работа бессмысленна - мы вернем false
             return false;
@@ -34,6 +34,10 @@ class CartController extends AppController { // Контроллер для ра
         redirect (); // Иначе, выполняем редирект и пользователь будет возвращен на ту же страницу, с которой он к нам пришел
         return true;
 
+    }
+
+    public function showAction () { // Метод для выполнения 'cart/show' в main.js - отображения товаров в корзине в модальном окне
+        $this->loadView ('cart_modal'); // Подключаем вид методом loadView с названием 'cart_modal' через require. Тк контроллер называется Cart, то данный вид будет искаться в папке views/Cart. Это будет ответ на Ajax запрос
     }
 
 }
