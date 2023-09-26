@@ -51,8 +51,13 @@ use wfm\View; // Импортируем(подключаем) класс вид�
                             <i class="far fa-user"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><?php __ ('tpl_login');?></a></li>
-                            <li><a class="dropdown-item" href="#"><?php __ ('tpl_signup');?></a></li>
+                            <?php if (empty($_SESSION['user'])): ?> <!-- Проверка, если у нас нет такого зарегистрированного пользователя -->
+                                <li><a class="dropdown-item" href="#"><?php __ ('tpl_login');?></a></li> <!-- Выводим "Авторизация" -->
+                                <li><a class="dropdown-item" href="#"><?php __ ('tpl_signup');?></a></li> <!-- Выводим "Регистрация" -->
+                                <?php else: ?>
+                                <li><a class="dropdown-item" href="#"><?php __ ('tpl_cabinet');?></a></li> <!-- Выводим "Кабинет" -->
+                                <li><a class="dropdown-item" href="#"><?php __ ('tpl_logout');?></a></li> <!-- Выводим "Выход" -->
+                            <?php endif; ?>
                         </ul>
                     </div>
 

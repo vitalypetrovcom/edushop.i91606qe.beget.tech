@@ -1996,3 +1996,7 @@
 =================
 [2023-09-26 16:29:00] Текст ошибки: Контроллер app\controllers\CategoryController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
 =================
+[2023-09-26 16:58:06] Текст ошибки: Контроллер app\controllers\CategoryController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
+[2023-09-26 16:58:25] Текст ошибки: Контроллер app\controllers\CategoryController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
