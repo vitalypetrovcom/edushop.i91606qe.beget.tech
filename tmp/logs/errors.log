@@ -1992,3 +1992,7 @@
 =================
 [2023-09-26 12:29:23] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
 =================
+[2023-09-26 14:35:12] Текст ошибки: Unmatched '}' | Файл: D:\OSPanel\domains\new-ishop.loc\app\models\Breadcrumbs.php | Строка: 52
+=================
+[2023-09-26 16:29:00] Текст ошибки: Контроллер app\controllers\CategoryController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================

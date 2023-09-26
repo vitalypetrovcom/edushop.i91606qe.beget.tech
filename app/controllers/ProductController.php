@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Breadcrumbs;
 use app\models\Product;
 use wfm\App;
 
@@ -19,10 +20,14 @@ class ProductController extends AppController { // Контроллер (кла�
         }
         /*debug ($product); // Проверка правильности выполнения запроса*/
 
+        $breadcrumbs = Breadcrumbs::getBreadcrumbs ($product['category_id'], $product['title']);  // Получим хлебные крошки используя модель Breadcrumbs и метод getBreadcrumbs. На вход передаем id категории продукта "$product['category_id']" и текущее название продукта $product['title'], которое мы допишем в конец хлебных крошек
+        /*debug ($breadcrumbs); // Выводим хлебные крошки для проверки*/
+
+
         $gallery = $this->model->get_gallery ($product['id']);  // Получаем все изображения из галереи для конкретного товара
         /*debug ($gallery); // Проверка правильности выполнения запроса*/
         $this->setMeta ($product['title'], $product['description'], $product['keywords']);  // Передадим все недостающие данные
-        $this->set (compact ('product', 'gallery'));  // Передаем сами данные используя метод "set"
+        $this->set (compact ('product', 'gallery', 'breadcrumbs'));  // Передаем сами данные хлебных крошек используя метод "set"
 
 
     }

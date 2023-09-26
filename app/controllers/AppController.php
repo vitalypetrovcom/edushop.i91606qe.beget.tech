@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\AppModel;
 use app\widgets\language\Language;
+use RedBeanPHP\R;
 use wfm\App;
 use wfm\Controller;
 
@@ -21,6 +22,13 @@ class AppController extends Controller { // Создаем базовый кон
 
         $lang = App::$app->getProperty ('language'); // Переменная с данными по текущему активному языку на сайте
        \wfm\Language::load ($lang['code'], $this->route);
+
+        $categories = R::getAssoc("SELECT c.*, cd.* FROM category c 
+                        JOIN category_description cd
+                        ON c.id = cd.category_id
+                        WHERE cd.language_id = ?", [$lang['id']]); // Получаем меню из БД используя функцию RedBeanPHP - ассоациативный массив всех категорий
+        /*debug ($categories); // Проверка правильности вывода категорий*/
+        App::$app->setProperty ("categories_{$lang['code']}", $categories);  // Кладем полученные категории в наш контейнер в зависимости от языка (categories_ru ИЛИ categories_en, по которым мы потом будем доставать эти данные)
 
 
     }
