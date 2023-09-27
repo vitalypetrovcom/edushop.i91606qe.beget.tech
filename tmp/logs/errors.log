@@ -2000,3 +2000,7 @@
 =================
 [2023-09-26 16:58:25] Текст ошибки: Контроллер app\controllers\CategoryController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
 =================
+[2023-09-27 11:56:56] Текст ошибки: Array to string conversion | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\CategoryController.php | Строка: 27
+=================
+[2023-09-27 11:57:08] Текст ошибки: Array to string conversion | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\CategoryController.php | Строка: 27
+=================
