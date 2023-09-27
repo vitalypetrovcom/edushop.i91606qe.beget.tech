@@ -28,9 +28,15 @@ class Category extends AppModel { // Модель (класс) для обраб
         return $ids; // Возвращаем строку id-шников
     }
 
-    public function get_products ($ids, $lang): array { // Метод для получения товаров конкретной выбранной категории. Аргументами передаем id-шники $ids и язык $lang
+    public function get_products ($ids, $lang, $start, $perpage): array { // Метод для получения товаров конкретной выбранной категории. Аргументами передаем id-шники $ids и язык $lang. Дополнительно, передаем аргументы $start, $perpage
 
-        return R::getAll ("SELECT p.*, pd.* FROM product p JOIN product_description pd on p.id = pd.product_id WHERE p.status = 1 AND p.category_id IN ($ids) AND pd.language_id = ?", [$lang['id']]); // Используем RedBeanPHP и метод getAll
+        return R::getAll ("SELECT p.*, pd.* FROM product p JOIN product_description pd on p.id = pd.product_id WHERE p.status = 1 AND p.category_id IN ($ids) AND pd.language_id = ? LIMIT $start, $perpage", [$lang['id']]); // Используем RedBeanPHP и метод getAll
+
+    }
+
+    public function get_count_products ($ids): int { // Метод для получения общего количества товаров в данной категории. На вход принимает id-шники товаров $ids
+
+        return R::count ('product', "category_id IN ($ids)");  // Получаем общее количество товаров в данной категории и возвращаем его. Используем RedBeanPHP и функцию "count": передаем название таблицы в БД 'product', добавляем SQL запрос
 
     }
 

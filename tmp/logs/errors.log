@@ -2004,3 +2004,35 @@
 =================
 [2023-09-27 11:57:08] Текст ошибки: Array to string conversion | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\CategoryController.php | Строка: 27
 =================
+[2023-09-27 17:42:25] Текст ошибки: Too few arguments to function app\models\Category::get_count_products(), 0 passed in D:\OSPanel\domains\new-ishop.loc\app\controllers\CategoryController.php on line 37 and exactly 1 expected | Файл: D:\OSPanel\domains\new-ishop.loc\app\models\Category.php | Строка: 37
+=================
+[2023-09-27 18:27:02] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 64
+=================
+[2023-09-27 18:27:19] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 64
+=================
+[2023-09-27 18:30:28] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 64
+=================
+[2023-09-27 18:31:42] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 64
+=================
+[2023-09-27 18:31:57] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 64
+=================
+[2023-09-27 18:31:57] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-27 18:35:05] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 65
+=================
+[2023-09-27 18:36:03] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 65
+=================
+[2023-09-27 18:36:27] Текст ошибки: Undefined variable $pagination | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 67
+=================
+[2023-09-27 18:37:22] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 65
+=================
+[2023-09-27 18:37:53] Текст ошибки: Not found language category | Файл: D:\OSPanel\domains\new-ishop.loc\app\widgets\language\Language.php | Строка: 42
+=================
+[2023-09-27 18:38:10] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 65
+=================
+[2023-09-27 18:40:23] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 63
+=================
+[2023-09-27 18:41:42] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 63
+=================
+[2023-09-27 18:43:14] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 63
+=================

@@ -1,11 +1,10 @@
-<!--/* Вид для обработки страниц категорий товаров */-->
 <?php
-/** @var $this \wfm\View */ /** Добавляем, чтобы мы могли использовать в этом файле $this */
-/** @var $category array */ /** $category */
-/** @var $products array */ /** $products */
-/** @var $total int */ /** $total */
-/** @var $pagination object */ /** $pagination */
-/** @var $breadcrumbs string */ /** $breadcrumbs */
+/** @var $this \wfm\View */
+/** @var $category array */
+/** @var $products array */
+/** @var $total int */
+/** @var $pagination object */
+/** @var $breadcrumbs string */
 ?>
 <div class="container">
     <nav aria-label="breadcrumb">
@@ -58,26 +57,20 @@
             <div class="row">
                 <?php if (!empty($products)): ?>
                     <?php $this->getPart('parts/products_loop', compact('products')); ?>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p><?= count($products) ?> <?php __('tpl_total_pagination'); ?> <?= $total ?></p> <!-- Например, 3 товара(ов) из 10 -->
+                            <?php if ($pagination->countPages > 1): ?> <!-- Проверка: Если на странице будет всего 1-3 товара, тогда мы не будем выводить пагинацию -->
+                                <?= $pagination ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
                 <?php else: ?>
                     <p><?php __('category_view_no_products'); ?></p>
                 <?php endif; ?>
             </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-            </div>
-
         </div>
 
     </div>

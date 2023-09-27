@@ -15,4 +15,6 @@ class Product extends AppModel { // Модель для работы со стр
         return R::getAll ("SELECT * FROM product_gallery WHERE product_id = ?", [$product_id]); // Метод для получения всех изображений галереи для конкретного товара
     }
 
+
+
 }
