@@ -2036,3 +2036,9 @@
 =================
 [2023-09-27 18:43:14] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\Category\view.php | Строка: 63
 =================
+[2023-09-28 12:49:04] Текст ошибки: Контроллер app\controllers\SearchController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
+[2023-09-28 12:49:04] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-28 14:40:18] Текст ошибки: Division by zero | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Pagination.php | Строка: 100
+=================

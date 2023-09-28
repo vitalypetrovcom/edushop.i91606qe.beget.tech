@@ -33,6 +33,9 @@ Router::add ('^(?P<lang>[a-z]+)?/?product/(?P<slug>[a-z0-9-]+)/?$', ['controller
 /** Правила маршрутизации для страниц категорий */
 Router::add ('^(?P<lang>[a-z]+)?/?category/(?P<slug>[a-z0-9-]+)/?$', ['controller' => 'Category', 'action' => 'view']);
 
+/** Правила маршрутизации для поиска */
+Router::add ('^(?P<lang>[a-z]+)?/?search/?$', ['controller' => 'Search', 'action' => 'index']);
+
 /**
  * Правила для клиентской части сайта по умолчанию (default) (вторичны):
  */
