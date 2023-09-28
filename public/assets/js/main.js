@@ -95,6 +95,10 @@ $(function() {
 
 	/* CART */
 
+	$('#input-sort').on('change', function () {  // Обработчик функции сортировки на странице категории товаров
+		window.location = PATH + window.location.pathname + '?' + $(this).val()  // Мы берем то, что у нас есть в адресной строке прибавляем '?' и текущее значение $(this).val() (например, sort=title_desc)
+	});
+
 	$('.open-search').click(function(e) {
 		e.preventDefault();
 		$('#search').addClass('active');
