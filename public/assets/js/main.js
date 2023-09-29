@@ -147,7 +147,7 @@ $(function() {
 	$('.product-card').on('click', '.add-to-wishlist', function (e) { // Функция добавления товара в избранные. Нам понадобится объект события "e"
 		e.preventDefault(); // Отменяем дефолтное действие (переход по ссылке)
 		const id = $(this).data('id');  // Получим id товара для добавления в избранные
-		const $this = $(this);
+		const $this = $(this); // Текущая ссылка на товар
 
 		/* Отправка Ajax запроса */
 		$.ajax({
@@ -163,9 +163,44 @@ $(function() {
 					'',
 					res.result
 				);
-				$this.removeClass('add-to-wishlist').addClass('delete-from-wishlist'); // Возможность удаления товара из избранного. Удалим класс для ссылки
-				$this.find('i').removeClass('far fa-heart').addClass('fas fa-hand-holding-heart'); // Замена иконки добавления в избранные после добавления товара. Найдем иконку $this.find('i'), удалим у нее класс removeClass('far fa-heart') и добавим ей класс addClass('fas fa-hand-holding-heart')
+				if (res.result == 'success' ) {
+					$this.removeClass('add-to-wishlist').addClass('delete-from-wishlist'); // Возможность удаления товара из избранного. Удалим класс для ссылки
+					$this.find('i').removeClass('far fa-heart').addClass('fas fa-hand-holding-heart'); // Замена иконки добавления в избранные после добавления товара. Найдем иконку $this.find('i'), удалим у нее класс removeClass('far fa-heart') и добавим ей класс addClass('fas fa-hand-holding-heart')
+				}
+			},
+			error: function () { // В случае ошибки:
+				alert('Error!');
+			}
+		})
 
+	});
+
+	$('.product-card').on('click', '.delete-from-wishlist', function (e) { // Функция удаления товара из избранного. Нам понадобится объект события "e"
+		e.preventDefault(); // Отменяем дефолтное действие (переход по ссылке)
+		const id = $(this).data('id');  // Получим id товара для удаления из избранные
+		const $this = $(this); // Текущая ссылка на товар
+
+		/* Отправка Ajax запроса */
+		$.ajax({
+			url: 'wishlist/delete',  // url на который будут уходить данные
+			type: 'GET',  // Метод отправки данных 'GET'
+			data: {id: id}, // Данные, которые будут отправляться: id
+			success: function (res) { // Ответ мы будем получать в переменную res
+				const url = window.location.toString();  // Нам нужно понять, гда мы находимся. Для этого мы получим текущий url
+				if (url.indexOf('wishlist') !== -1) { // Мы проверим, если у нас url.indexOf есть строка 'wishlist' (мы находимся на странице избранного), тогда мы будем делать
+					window.location = url; // Тогда мы перезапросим эту страницу
+				} else { // Иначе,
+					res = JSON.parse(res); // Получаем ответ. Ответ мы будем принимать в формате JSON, поэтому нужно распарсить его
+					Swal.fire( // Выводим ответ красиво. <!-- Используем библиотеку sweetalert2.js - красивая, отзывчивая, настраиваемая, доступная (WAI-ARIA) замена для JavaScript's popup boxes -->
+						res.text,
+						'',
+						res.result
+					);
+					if (res.result == 'success' ) {
+						$this.removeClass('delete-from-wishlist').addClass('add-to-wishlist'); // Возможность добавления товара в избранное.
+						$this.find('i').removeClass('fas fa-hand-holding-heart').addClass('far fa-heart'); // Замена иконки добавления в избранные после удаления товара. Найдем иконку $this.find('i'), удалим у нее класс removeClass('fas fa-hand-holding-heart') и добавим ей класс addClass('far fa-heart')
+					}
+				}
 			},
 			error: function () { // В случае ошибки:
 				alert('Error!');

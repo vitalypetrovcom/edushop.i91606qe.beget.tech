@@ -38,4 +38,16 @@ class WishlistController extends AppController { // Контроллер (кла
         exit(json_encode ($answer)); // Вернем ответ
     }
 
+    public function deleteAction () { // Метод для удаления товаров из избранного
+
+        $id = get('id');  // Получаем id товара из массива $_GET
+
+        if ($this->model->delete_from_wishlist ($id)) { // Проверим, что у нас вернет метод delete_from_wishlist модели Wishlist
+            $answer = ['result' => 'success', 'text' => ___ ('tpl_wishlist_delete_success')]; // Вернем сообщение об успешном удалении из избранного
+        } else { // Иначе,
+            $answer = ['result' => 'error', 'text' => ___ ('tpl_wishlist_delete_error')]; // Вернем сообщение об ошибке
+        }
+        exit(json_encode ($answer)); // Вернем ответ
+    }
+
 }
