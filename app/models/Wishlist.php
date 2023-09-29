@@ -45,4 +45,15 @@ class Wishlist extends AppModel { // Модель для получения да
         return [];
     }
 
+    public function get_wishlist_products ($lang): array { // Метод модели, который будет по id-шникам получать товары из списка избранного
+
+        $wishlist = self::get_wishlist_ids ();  // Вызовем метод get_wishlist_ids - для получения либо пустого массива, либо массива id-шников
+        if ($wishlist) { // Если у нас $wishlist массив не пуст
+            $wishlist = implode (',', $wishlist); // Мы его разобьем по разделителю методом implode и получим строку с id-шниками
+            return R::getAll ("SELECT p.*, pd.* FROM product p JOIN product_description pd on p.id = pd.product_id WHERE p.status = 1 AND p.id IN ($wishlist) AND pd.language_id = ? LIMIT 6", [$lang['id']]); // Вернем нужные нам данные из БД по id-шникам
+        }
+        return []; // Если у нас $wishlist массив пуст, мы вернем пустой массив
+
+    }
+
 }

@@ -75,6 +75,7 @@ use wfm\View; // Импортируем(подключаем) класс вид�
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
 <script src="<?= PATH ?>/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="<?= PATH ?>/assets/js/sweetalert2.js"></script> <!-- Подключаем библиотеку sweetalert2.js - красивая, отзывчивая, настраиваемая, доступная (WAI-ARIA) замена для JavaScript's popup boxes -->
 <script src="<?= PATH ?>/assets/js/main.js"></script>
 
 </body>

@@ -156,7 +156,16 @@ $(function() {
 			data: {id: id}, // Данные, которые будут отправляться: id
 			success: function (res) { // Ответ мы будем получать в переменную res
 				res = JSON.parse(res); // Ответ мы будем принимать в формате JSON, поэтому нужно распарсить его
-				console.log(res); // Выведение в консоль
+				/*console.log(res); // Выведение в консоль*/
+
+				Swal.fire( // <!-- Используем библиотеку sweetalert2.js - красивая, отзывчивая, настраиваемая, доступная (WAI-ARIA) замена для JavaScript's popup boxes -->
+					res.text,
+					'',
+					res.result
+				);
+				$this.removeClass('add-to-wishlist').addClass('delete-from-wishlist'); // Возможность удаления товара из избранного. Удалим класс для ссылки
+				$this.find('i').removeClass('far fa-heart').addClass('fas fa-hand-holding-heart'); // Замена иконки добавления в избранные после добавления товара. Найдем иконку $this.find('i'), удалим у нее класс removeClass('far fa-heart') и добавим ей класс addClass('fas fa-hand-holding-heart')
+
 			},
 			error: function () { // В случае ошибки:
 				alert('Error!');

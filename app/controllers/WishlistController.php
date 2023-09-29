@@ -3,10 +3,20 @@
 namespace app\controllers;
 
 use app\models\Wishlist;
+use wfm\App;
 
-/** @@property  $model */
+/** @@property Wishlist $model */
 
 class WishlistController extends AppController { // Контроллер (класс) для обработки запросов добавления товаров в избранные
+
+    public function indexAction () { // Метод для отображения товаров в списке избранного. Кладем в куки только id-шники товаров, но показывать мы должны товары в зависимости от выбранного языка
+
+        $lang = App::$app->getProperty ('language');  // Получим активный язык сайта
+        $products = $this->model->get_wishlist_products ($lang) ; // Вызовем метод get_wishlist_products модели Wishlist (массив с данными о id товаров в списке избранного)
+        /*debug ($products, 1); // Проверка правильности выполнения*/
+        $this->setMeta (___ ('wishlist_index_title')); // Передадим мета-данные в вид
+        $this->set (compact ('products'));  // Передаем сами данные в вид
+    }
 
     public function addAction () { // Метод добавления товаров в избранные. Задача данного метода вернуть 'id' если он есть. Если его нет, мы будем знать, что такого товара у нас нет - пользователь прислал нам неправильный 'id' запрос
 

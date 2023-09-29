@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\AppModel;
+use app\models\Wishlist;
 use app\widgets\language\Language;
 use RedBeanPHP\R;
 use wfm\App;
@@ -29,6 +30,9 @@ class AppController extends Controller { // Создаем базовый кон
                         WHERE cd.language_id = ?", [$lang['id']]); // Получаем меню из БД используя функцию RedBeanPHP - ассоациативный массив всех категорий
         /*debug ($categories); // Проверка правильности вывода категорий*/
         App::$app->setProperty ("categories_{$lang['code']}", $categories);  // Кладем полученные категории в наш контейнер в зависимости от языка (categories_ru ИЛИ categories_en, по которым мы потом будем доставать эти данные)
+
+        App::$app->setProperty ('wishlist', Wishlist::get_wishlist_ids ());  // В контейнер заберем все id-шники тех товаров, которые находятся в избранном. Под именем 'wishlist' в контейнер запишем то, что нам вернет метод "get_wishlist_ids"
+        /*debug (App::$app->getProperty ('wishlist')); // Проверка правильности выполнения*/
 
 
     }

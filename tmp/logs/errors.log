@@ -2042,3 +2042,31 @@
 =================
 [2023-09-28 14:40:18] Текст ошибки: Division by zero | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Pagination.php | Строка: 100
 =================
+[2023-09-29 11:18:37] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-29 11:19:00] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-29 11:19:17] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-29 11:32:05] Текст ошибки: syntax error, unexpected token "else" | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\parts\products_loop.php | Строка: 25
+=================
+[2023-09-29 11:32:05] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-29 11:34:11] Текст ошибки: syntax error, unexpected token "else" | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\parts\products_loop.php | Строка: 25
+=================
+[2023-09-29 11:34:11] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-29 11:46:32] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-29 13:02:12] Текст ошибки: Метод app\controllers\WishlistController::deleteAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
+=================
+[2023-09-29 13:02:12] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-29 13:04:37] Текст ошибки: Not found language wishlist | Файл: D:\OSPanel\domains\new-ishop.loc\app\widgets\language\Language.php | Строка: 42
+=================
+[2023-09-29 13:04:37] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-29 13:06:47] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-09-29 13:07:24] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
