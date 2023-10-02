@@ -8,12 +8,17 @@ use wfm\View; // Импортируем(подключаем) класс вид�
             <div class="row">
                 <div class="col-md-3 col-6">
                     <h4><?php __ ('tpl_information'); ?></h4>
-                    <ul class="list-unstyled">
+                    <?php new \app\widgets\page\Page( [  // Создаем экземпляр класса и передаем ему все необходимые опции
+                        'cache' => 0,
+                        'class' => 'list-unstyled',
+                        'prepend' => '<li><a href="' . base_url () . '">' . ___ ('tpl_home_link') . '</a></li>',
+                    ] ) ?>
+                    <!--<ul class="list-unstyled">
                         <li><a href="#">Главная</a></li>
                         <li><a href="#">О магазине</a></li>
                         <li><a href="#">Оплата и доставка</a></li>
                         <li><a href="#">Контакты</a></li>
-                    </ul>
+                    </ul>-->
                 </div>
 
                 <div class="col-md-3 col-6">
