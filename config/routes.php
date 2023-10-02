@@ -39,6 +39,11 @@ Router::add ('^(?P<lang>[a-z]+)?/?search/?$', ['controller' => 'Search', 'action
 /** Правила маршрутизации для избранного */
 Router::add ('^(?P<lang>[a-z]+)?/?wishlist/?$', ['controller' => 'Wishlist', 'action' => 'index']);
 
+/** Правила маршрутизации для страниц сайта */
+Router::add ('^(?P<lang>[a-z]+)?/?page/(?P<slug>[a-z0-9-]+)/?$', ['controller' => 'Page', 'action' => 'view']);
+
+
+
 /**
  * Правила для клиентской части сайта по умолчанию (default) (вторичны):
  */
