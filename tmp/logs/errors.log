@@ -2074,3 +2074,9 @@
 =================
 [2023-10-02 12:50:43] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
 =================
+[2023-10-03 11:07:49] Текст ошибки: Метод app\controllers\UserController::loginAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
+=================
+[2023-10-03 11:07:49] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-10-03 12:16:10] Текст ошибки: Array to string conversion | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\UserController.php | Строка: 21
+=================
