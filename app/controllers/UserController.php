@@ -18,11 +18,17 @@ class UserController extends AppController { // Контроллер (класс
 
             $data = $_POST;  // Заберем данные из массива $_POST
             $this->model->load ($data);  // Загружаем данные в модель User методом load
-            debug ($data);
-            debug ($this->model->attributes); // Проверка правильности выполнения
+            /*debug ($data);
+            debug ($this->model->attributes); // Проверка правильности выполнения*/
 
-
+            if (!$this->model->validate ($data)) { // Проверим, что вернул у нас метод validate (bool)
+                $this->model->getErrors (); // Если не прошли валидацию (есть ошибки). Мы должны их показать используя модель и метод getErrors (запишет ошибки валидации в сессию)
+            } else { // Иначе
+                $_SESSION['success'] = ___ ('user_signup_success_register'); // Если прошли валидацию (нет ошибок). Помещаем в массив $_SESSION по ключу 'success' строку сообщения 'Учетная запись была создана'
+            }
+            redirect (); // Делаем редирект на эту же страницу чтобы не было повторной отправки формы
         }
+
 
         $this->setMeta (___ ('tpl_signup')); // Проставим мета-данные страницы
 

@@ -6,6 +6,7 @@
     }
   },
   "require": {
-    "gabordemooij/redbean": "^v5.7.4"
+    "gabordemooij/redbean": "^v5.7.4",
+    "vlucas/valitron": "^1.4"
   }
 }
