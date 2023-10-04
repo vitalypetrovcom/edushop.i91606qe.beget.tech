@@ -21,10 +21,22 @@ class UserController extends AppController { // Контроллер (класс
             /*debug ($data);
             debug ($this->model->attributes); // Проверка правильности выполнения*/
 
-            if (!$this->model->validate ($data)) { // Проверим, что вернул у нас метод validate (bool)
+            if (!$this->model->validate ($data) || !$this->model->checkUnique ()) { // Проверим, что вернул у нас метод validate (bool)
                 $this->model->getErrors (); // Если не прошли валидацию (есть ошибки). Мы должны их показать используя модель и метод getErrors (запишет ошибки валидации в сессию)
+
+                $_SESSION['form_data'] = $data; // Создаем элемент сессии с ключом 'form-data' для хранения вводимых пользователем данных в форму и запишем туда данные из массива $data
+
             } else { // Иначе
-                $_SESSION['success'] = ___ ('user_signup_success_register'); // Если прошли валидацию (нет ошибок). Помещаем в массив $_SESSION по ключу 'success' строку сообщения 'Учетная запись была создана'
+
+                $this->model->attributes['password'] = password_hash ($this->model->attributes['password'], PASSWORD_DEFAULT); // Перед сохранением пароля из пользовательской формы $this->model->attributes['password'] в БД, мы хешируем пароль функцией password_hash алгоритмом PASSWORD_DEFAULT
+                if ($this->model->save ('user')) { // Если мы успешно записали данные заполненной пользовательской формы в БД
+                    $_SESSION['success'] = ___ ('user_signup_success_register'); // Если прошли валидацию (нет ошибок). Помещаем в массив $_SESSION по ключу 'success' строку сообщения 'Учетная запись была создана'
+                } else {
+                    $_SESSION['errors'] = ___ ('user_signup_error_register'); // Если не прошли валидацию выдаем ошибку. Помещаем в массив $_SESSION по ключу 'errors' строку сообщения 'Ошибка регистрации'
+                }
+
+
+
             }
             redirect (); // Делаем редирект на эту же страницу чтобы не было повторной отправки формы
         }
