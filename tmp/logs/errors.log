@@ -2104,3 +2104,7 @@
 =================
 [2023-10-04 13:22:41] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1@ru.ru' for key 'email' | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 206
 =================
+[2023-10-04 16:20:46] Текст ошибки: Метод app\controllers\UserController::logoutAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
+=================
+[2023-10-04 16:24:00] Текст ошибки: Метод app\controllers\UserController::logoutAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
+=================

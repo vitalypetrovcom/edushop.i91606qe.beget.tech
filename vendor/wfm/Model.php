@@ -32,7 +32,7 @@ abstract class Model
     public function validate($data): bool
     { // Метод валидации данных, пришедших от пользователя после заполнения и отправки формы на сайте. Принимает аргументом массив данных от пользователя $data
         Validator::langDir(APP . '/languages/validator/lang'); // Подключаем папку с языковыми файлами валидатору Validator
-        Validator::lang('ru'); // Указываем русский язык для переводного файла
+        Validator::lang(App::$app->getProperty ('language')['code']); // Указываем язык для переводного файла
         $validator = new Validator($data); // Создаем объект класса Validator (класс подключенной библиотеки валидации Valitron). На вход передаем данные пользователя $data
         $validator->rules($this->rules); // Передаем методом валидатора rules массив правил свойства rules
         $validator->labels($this->getLabels()); // Чтобы валидатор $validator использовал наши лейблы labels, мы должны ему указать с помощью специального метода labels наши переводные фразы с помощью метода getLabels. Вернем массив, где ключом будет имя поля, а значением наша переводная фраза
