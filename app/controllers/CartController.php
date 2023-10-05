@@ -3,12 +3,13 @@
 namespace app\controllers;
 
 use app\models\Cart;
+use app\models\User;
 use wfm\App;
 
 /** @property Cart $model */ // Объявляем модель
 class CartController extends AppController { // Контроллер для работы с корзиной
 
-    public function addAction (): bool {
+    public function addAction (): bool { // Метод для добавления товаров в корзину
 
         $lang = App::$app->getProperty ('language'); // Берем язык из контейнера "App::$app->getProperty" по ключу 'language'
         $id = get ('id'); // Получаем данные по ключу 'id' используя функцию "get"
@@ -62,6 +63,47 @@ class CartController extends AppController { // Контроллер для ра
         $this->loadView ( 'cart_modal' ); // Подключаем вид методом loadView с названием 'cart_modal' через require.
         return true;
     }
+
+    public function viewAction () { // Метод для подготовки страницы оформления заказа пользователем
+
+        $this->setMeta (___ ('tpl_cart_title')); // Отправка мета-данных на страницу
+
+    }
+
+    public function checkoutAction () { // Метод для отправки формы заказа на выполнение
+
+        if (!empty($_POST)) { // Если не пуст массив $_POST (пользователь отправил форму заказа)
+            // 1. Зарегистрировать пользователя, если он не авторизован
+            if (!User::checkAuth ()) { // Если он не авторизован
+                $user = new User(); // Создадим объект $user на основе модели User
+                $data = $_POST; // Заберем данные из массива $_POST
+                $user->load ($data) ; // Загрузим их в модель
+                if (!$user->validate ($data) || !$user->checkUnique () ) { // Проверяем данные пользователя на валидацию И email на уникальность
+
+                    $user->getErrors (); // Если не прошли валидацию (есть ошибки). Мы должны их показать используя модель и метод getErrors (запишет ошибки валидации в сессию)
+
+                    $_SESSION['form_data'] = $data; // Создаем элемент сессии с ключом 'form-data' для хранения вводимых пользователем данных в форму и запишем туда данные из массива $data
+                    redirect (); // Выполняем редирект, чтобы дальнейший код не выполнялся
+
+                } else { // Если валидация и проверка на уникальность прошли успешно
+
+                    $user->attributes['password'] = password_hash ($user->attributes['password'], PASSWORD_DEFAULT); // Перед сохранением пароля из пользовательской формы $user->attributes['password'] в БД, мы хешируем пароль функцией password_hash алгоритмом PASSWORD_DEFAULT
+                    // id пользователя нам нужен, чтобы при сохранении заказа понимать какой конкретно пользователь сделал конкретный заказ
+                    if (!$user_id = $user->save ('user')) { // Если мы не сохранили пользователя (мы не получили id пользователя !$user_id), значит какая-либо ошибка возникла при сохранении данных пользователя
+                        $_SESSION['errors'] = ___ ('cart_checkout_error_register'); // В сессию с ключом 'errors' записываем ошибку регистрации пользователя
+                        redirect (); // Выполняем редирект, чтобы дальнейший код не выполнялся
+                    }
+
+                }
+
+            }
+
+        }
+        redirect ();
+
+
+    }
+
 
 
 }

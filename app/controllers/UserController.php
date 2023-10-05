@@ -23,7 +23,7 @@ class UserController extends AppController { // Контроллер (класс
             /*debug ($data);
             debug ($this->model->attributes); // Проверка правильности выполнения*/
 
-            if (!$this->model->validate ($data) || !$this->model->checkUnique ()) { // Проверим, что вернул у нас метод validate (bool)
+            if (!$this->model->validate ($data) || !$this->model->checkUnique ()) { // Проверим, что вернул у нас метод validate (bool) и метод на проверку уникальности email checkUnique
                 $this->model->getErrors (); // Если не прошли валидацию (есть ошибки). Мы должны их показать используя модель и метод getErrors (запишет ошибки валидации в сессию)
 
                 $_SESSION['form_data'] = $data; // Создаем элемент сессии с ключом 'form-data' для хранения вводимых пользователем данных в форму и запишем туда данные из массива $data

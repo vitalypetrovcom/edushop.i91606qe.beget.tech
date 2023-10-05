@@ -39,11 +39,11 @@
     <?php endif; ?>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-success ripple" data-bs-dismiss="modal"><?php __ ('tpl_cart_btn_continue'); ?></button> <!-- Кнопка выводится всегда -->
+    <button type="button" class="btn btn-success ripple" data-bs-dismiss="modal"><?php __ ('tpl_cart_btn_continue'); ?></button> <!-- Кнопка "Продолжить покупки" выводится всегда -->
 
     <?php if (!empty($_SESSION['cart'])): ?>  <!-- Условие выполнения - Если у нас есть что-то в корзине, мы будем выводить $_SESSION['cart'] -->
-    <button type="button" class="btn btn-primary"><?php __ ('tpl_cart_btn_order'); ?></button> <!-- Кнопка выводится когда в корзине есть товары (не пуста) -->
-        <button type="button" id="clear-cart" class="btn btn-danger"><?php __ ('tpl_cart_btn_clear'); ?></button> <!-- Кнопка выводится когда в корзине есть товары (не пуста) -->
+    <a href="cart/view" class="btn btn-primary"><?php __ ('tpl_cart_btn_order'); ?></a> <!-- Кнопка "Оформить заказ" выводится когда в корзине есть товары (не пуста) -->
+        <button type="button" id="clear-cart" class="btn btn-danger"><?php __ ('tpl_cart_btn_clear'); ?></button> <!-- Кнопка "Очистить корзину" выводится когда в корзине есть товары (не пуста) -->
     <?php endif; ?>
 </div>
 
