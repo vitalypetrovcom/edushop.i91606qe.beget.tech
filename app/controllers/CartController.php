@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Cart;
+use app\models\Order;
 use app\models\User;
 use wfm\App;
 
@@ -73,7 +74,7 @@ class CartController extends AppController { // Контроллер для ра
     public function checkoutAction () { // Метод для отправки формы заказа на выполнение
 
         if (!empty($_POST)) { // Если не пуст массив $_POST (пользователь отправил форму заказа)
-            // 1. Зарегистрировать пользователя, если он не авторизован
+            // 1. Зарегистрировать пользователя, если он не авторизован (не зарегистрирован)
             if (!User::checkAuth ()) { // Если он не авторизован
                 $user = new User(); // Создадим объект $user на основе модели User
                 $data = $_POST; // Заберем данные из массива $_POST
@@ -93,8 +94,22 @@ class CartController extends AppController { // Контроллер для ра
                         $_SESSION['errors'] = ___ ('cart_checkout_error_register'); // В сессию с ключом 'errors' записываем ошибку регистрации пользователя
                         redirect (); // Выполняем редирект, чтобы дальнейший код не выполнялся
                     }
-
                 }
+            }
+
+            // 2. Сохранить заказ в БД
+            $data['user_id'] = $user_id ?? $_SESSION['user']['id']; // Поместим в массив $data по ключу 'user_id' значение $user_id (если пользователь не был авторизован) или значение $_SESSION['user']['id'] массива сессии (если пользователь был авторизован на сайте)
+            $data['note'] = post ('note'); // У нас есть примечания, которые не попали в аттрибуты модели $attributes и мы его заберем из массива $_POST методом post
+            $user_email = $_SESSION['user']['email'] ?? post ('email');  // Создаем переменную $user_email и запишем в нее значение из массива $_SESSION['user']['email'] (если пользователь авторизован) или из массива $_POST (если пользователь не авторизован и мы его зарегистрировали при оформлении заказа на сайте)
+
+            if (!$order_id = Order::saveOrder ($data)) { // Пробуем вызвать метод saveOrder модели Oder. Возвращать будет номер заказа или false. Если у нас нет номера заказа:
+                $_SESSION['errors'] = ___ ('cart_checkout_error_save_order'); // Записываем сообщение об ошибке при оформлении заказа
+            } else { // Если у нас есть номер заказа
+                $_SESSION['success'] = ___ ('cart_checkout_order_success'); // Записываем сообщение об успехе при оформлении заказа
+
+                // 1. Будем отправлять письма
+
+                // 2. Будем очищать корзину
 
             }
 
