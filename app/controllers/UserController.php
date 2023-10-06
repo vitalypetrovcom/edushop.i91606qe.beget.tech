@@ -108,4 +108,22 @@ class UserController extends AppController { // Контроллер (класс
 
     }
 
+    public function orderAction () { // Метод для работы со страницей конкретного заказа
+
+        if (!User::checkAuth ()) { // Проверяем, авторизован ли пользователь
+            redirect (base_url () . 'user/login'); // Делаем редирект на страницу авторизации
+        }
+
+        $id = get ('id'); // Получаем номер заказа
+        $order = $this->model->get_user_order ($id);  // В переменную   получаем данные заказа
+        if (!$order) { // Если получили пустой массив
+            throw new \Exception('Not found order!', 404);
+        }
+
+        $this->setMeta (___ ('user_order_title'));  // Если мы получили массив с данными заказа, тогда передаем на страницу мета-данные
+        $this->set (compact ('order')); // Передаем сами данные заказа
+
+
+    }
+
 }

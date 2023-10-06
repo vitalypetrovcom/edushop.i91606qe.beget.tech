@@ -82,6 +82,11 @@ class User extends AppModel { // Модель (класс) для работы �
 
         return R::getAll ("SELECT * FROM orders WHERE user_id = ? ORDER BY id DESC LIMIT $start, $perpage", [$user_id]);
 
+    }
+
+    public function get_user_order ($id): array { // Метод получения данных о конкретном заказе пользователя. На вход принимается номер заказа пользователя $id. Мы вернем либо заказ (массив с данными заказа) или пустой массив (такого номера заказа нет)
+
+        return R::getAll ("SELECT o.*, op.* FROM orders o JOIN order_product op on o.id = op.order_id WHERE o.id = ?", [$id]);
 
     }
 
