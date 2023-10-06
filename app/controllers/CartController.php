@@ -103,14 +103,19 @@ class CartController extends AppController { // Контроллер для ра
             $user_email = $_SESSION['user']['email'] ?? post ('email');  // Создаем переменную $user_email и запишем в нее значение из массива $_SESSION['user']['email'] (если пользователь авторизован) или из массива $_POST (если пользователь не авторизован и мы его зарегистрировали при оформлении заказа на сайте)
 
             if (!$order_id = Order::saveOrder ($data)) { // Пробуем вызвать метод saveOrder модели Oder. Возвращать будет номер заказа или false. Если у нас нет номера заказа:
-                $_SESSION['errors'] = ___ ('cart_checkout_error_save_order'); // Записываем сообщение об ошибке при оформлении заказа
+                $_SESSION['errors'] = ___ ('cart_checkout_error_save_order'); // Записываем в сессию сообщение об ошибке при оформлении заказа
             } else { // Если у нас есть номер заказа
-                $_SESSION['success'] = ___ ('cart_checkout_order_success'); // Записываем сообщение об успехе при оформлении заказа
 
                 // 1. Будем отправлять письма
+                Order::mailOrder ($order_id, $user_email, 'mail_order_user'); // Отправляем сообщение пользователю
+                Order::mailOrder ($order_id, App::$app->getProperty ('admin_email'), 'mail_order_admin'); // Отправляем сообщение администратору
 
-                // 2. Будем очищать корзину
+                // 2. Будем очищать сессию корзины
+                unset($_SESSION['cart']); // Удаляем данные из сессии
+                unset($_SESSION['cart.sum']);
+                unset($_SESSION['cart.qty']);
 
+                $_SESSION['success'] = ___ ('cart_checkout_order_success'); // Записываем в сессию сообщение об успехе при оформлении заказа
             }
 
         }

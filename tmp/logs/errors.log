@@ -2118,3 +2118,7 @@
 =================
 [2023-10-05 11:57:06] Текст ошибки: Не найден вид D:\OSPanel\domains\new-ishop.loc/app/views/Cart/checkout.php | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\View.php | Строка: 53
 =================
+[2023-10-06 11:41:46] Текст ошибки: Class "app\models\App" not found | Файл: D:\OSPanel\domains\new-ishop.loc\app\models\Order.php | Строка: 70
+=================
+[2023-10-06 11:41:46] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
