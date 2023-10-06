@@ -90,6 +90,17 @@ class User extends AppModel { // Модель (класс) для работы �
 
     }
 
+    public function get_count_files (): int { // Метод для получения общего количества цифровых товаров (файлов для скачивания), которые купил пользователь
+
+        return R::count ('order_download', 'user_id = ? AND status = 1', [$_SESSION['user']['id']]);
+    }
+
+    public function get_user_files ($start, $perpage, $lang): array { // Метод для получения самих файлов для скачивания пользователем. На вход передаем параметры - начало выборки $start, количество на странице $perpage, язык $lang
+
+        return R::getAll ("SELECT od.*, d.*, dd.* FROM order_download od JOIN download d on d.id = od.download_id JOIN download_description dd on d.id = dd.download_id WHERE od.user_id = ? AND od.status = 1 AND dd.language_id = ? LIMIT $start, $perpage", [$_SESSION['user']['id'], $lang['id']]);
+
+    }
+
 
 
 

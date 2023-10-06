@@ -123,7 +123,32 @@ class UserController extends AppController { // Контроллер (класс
         $this->setMeta (___ ('user_order_title'));  // Если мы получили массив с данными заказа, тогда передаем на страницу мета-данные
         $this->set (compact ('order')); // Передаем сами данные заказа
 
+    }
+
+    public function filesAction () { // Метод для работы со страницей файлов для скачивания цифровых продуктов
+
+        if (!User::checkAuth ()) { // Проверяем, авторизован ли пользователь
+            redirect (base_url () . 'user/login'); // Делаем редирект на страницу авторизации
+        }
+
+        $lang = App::$app->getProperty ('language'); // Получаем текущий активный язык сайта из контейнера App
+        $page = get ('page'); // Нам нужна пагинация на странице. Берем текущую страницу из массива $_GET
+        $perpage = App::$app->getProperty ('pagination'); // Количество отображаемых файлов (записей) на странице
+//        $perpage = 1;
+
+        $total = $this->model->get_count_files () ; // Общее количество файлов для скачивания
+        $pagination = new Pagination($page, $perpage, $total); // Устанавливаем пагинацию на странице файлов
+        $start = $pagination->getStart (); // Нужно указать, с какого файла (записи в таблице файлов) в БД мы должны получать записи
+
+        $files = $this->model->get_user_files ($start, $perpage, $lang); // Получаем сами файлы (ссылки на скачивание) в виде массива
+        $this->setMeta (___ ('user_files_title')); // Передадим мета-данные
+        $this->set (compact ('files', 'pagination', 'total')); // Передаем сами данные файлов: массив файлов 'files', объект пагинации 'pagination', общее количество файлов 'total'
+
 
     }
+
+
+
+
 
 }
