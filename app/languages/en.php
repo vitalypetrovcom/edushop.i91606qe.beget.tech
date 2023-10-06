@@ -1,4 +1,4 @@
-<?php
+<?php  /*В этом файле мы будем хранить переводные фразы, которые относятся к шаблону EN */
 
 return [
     'tpl_information' => 'Information',
@@ -43,6 +43,7 @@ return [
     'tpl_search_query' => 'Search by: ',
     'tpl_search_not_found' => 'No results were found for your search',
 
+
     'tpl_wishlist_add_success' => 'Product added to favorites',
     'tpl_wishlist_add_error' => 'Error adding product to favorites',
     'tpl_wishlist_delete_success' => 'Product removed from favorites',
@@ -50,3 +51,7 @@ return [
 
     'tpl_error_404' => '404 - Page not found',
 ];
+
+
+
+

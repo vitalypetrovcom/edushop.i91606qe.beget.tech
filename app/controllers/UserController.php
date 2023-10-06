@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\User;
 use wfm\App;
+use wfm\Pagination;
 
 /** @property User $model */
 
@@ -85,6 +86,26 @@ class UserController extends AppController { // Контроллер (класс
         }
 
         $this->setMeta (___ ('tpl_cabinet')); // Устанавливаем мета-данные страницы
+    }
+
+    public function ordersAction () { // Метод для работы со страницей заказов
+
+        if (!User::checkAuth ()) { // Проверяем, авторизован ли пользователь
+            redirect (base_url () . 'user/login'); // Делаем редирект на страницу авторизации
+        }
+
+        $page = get ('page'); // Для работы с пагинацией объявляем переменную $page (номер страницы)
+//        $perpage = App::$app->getProperty ('pagination'); // Количество заказов на странице
+        $perpage = 5;
+        $total = $this->model->get_count_orders ($_SESSION['user']['id']); // Общее количество заказов для конкретного пользователя берем используя метод модели User get_count_orders и передавая в него id конкретного пользователя $_SESSION['user']['id']
+        $pagination = new Pagination($page, $perpage, $total); // Устанавливаем пагинацию на странице заказов
+         $start = $pagination->getStart (); // Нужно указать, с какой записи в таблице заказов в БД мы должны получать записи
+
+         $orders = $this->model->get_user_orders ($start, $perpage, $_SESSION['user']['id']); // Получим заказы конкретного пользователя используя метод модели User get_user_orders и передавая в него начальную позицию выборки $start, количество заказов на странице $perpage, id конкретного пользователя $_SESSION['user']['id']
+
+         $this->setMeta (___ ('user_orders_title')); // Передадим мета-данные на страницу заказов
+        $this->set (compact ('orders', 'pagination', 'total')); // Передаем сами данные
+
     }
 
 }
