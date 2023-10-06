@@ -79,4 +79,12 @@ class UserController extends AppController { // Контроллер (класс
 
     }
 
+    public function cabinetAction () { // Метод для работы с личным кабинетом
+        if (!User::checkAuth ()) { // Проверяем, авторизован ли пользователь
+            redirect (base_url () . 'user/login'); // Делаем редирект на страницу авторизации
+        }
+
+        $this->setMeta (___ ('tpl_cabinet')); // Устанавливаем мета-данные страницы
+    }
+
 }
