@@ -19,15 +19,14 @@ class UserController extends AppController { // Контроллер (класс
 
         if (!empty($_POST)) { // Проверяем, передали ли мы методом POST данные на сервер. Если массив $_POST не пуст, мы будем работать с переданными данными (передали данные или как минимум, нажали кнопку "отправить")
 
-            $data = $_POST;  // Заберем данные из массива $_POST
-            $this->model->load ($data);  // Загружаем данные в модель User методом load
-            /*debug ($data);
-            debug ($this->model->attributes); // Проверка правильности выполнения*/
 
-            if (!$this->model->validate ($data) || !$this->model->checkUnique ()) { // Проверим, что вернул у нас метод validate (bool) и метод на проверку уникальности email checkUnique
+            $this->model->load ();  // Загружаем данные из массива $_POST в модель User методом load
+            /*debug ($this->model->attributes); // Проверка правильности выполнения*/
+
+            if (!$this->model->validate ($this->model->attributes) || !$this->model->checkUnique ()) { // Проверим, что вернул у нас метод validate (bool) и метод на проверку уникальности email checkUnique
                 $this->model->getErrors (); // Если не прошли валидацию (есть ошибки). Мы должны их показать используя модель и метод getErrors (запишет ошибки валидации в сессию)
 
-                $_SESSION['form_data'] = $data; // Создаем элемент сессии с ключом 'form-data' для хранения вводимых пользователем данных в форму и запишем туда данные из массива $data
+                $_SESSION['form_data'] = $this->model->attributes; // Создаем элемент сессии с ключом 'form-data' для хранения вводимых пользователем данных в форму и запишем туда данные из массива $this->model->attributes
 
             } else { // Иначе
 
@@ -176,9 +175,57 @@ class UserController extends AppController { // Контроллер (класс
             }
         }
         redirect (); // Делаем редирект на эту же страницу
+    }
 
+    public function credentialsAction () { // Метод для обработки страницы учетных данных пользователя в личном кабинете
+
+
+        if (!User::checkAuth ()) { // Проверяем, авторизован ли пользователь
+            redirect (base_url () . 'user/login'); // Если пользователь не авторизован, делаем редирект на страницу авторизации
+        }
+
+        if (!empty($_POST)) { // Проверяем, передали ли мы методом POST данные на сервер. Если массив $_POST не пуст, мы будем работать с переданными данными (передали данные или как минимум, нажали кнопку "отправить")
+
+            $this->model->load ();  // Загружаем данные в модель User методом load
+            /*debug ($this->model->attributes); // Проверка правильности выполнения*/
+            if (empty($this->model->attributes['password'])) { // Если у нас поле 'password' не заполнено пользователем (после отправки формы указанное поле пусто в массиве $this->model->attributes)
+                unset($this->model->attributes['password']); // Удалим значение данного поля из массива $this->model->attributes
+            }
+
+            unset($this->model->attributes['email']); // Удалим значение данного поля из массива $this->model->attributes
+
+
+            if (!$this->model->validate ($this->model->attributes)) { // Проверим, что вернул у нас метод validate (bool). Мы не даем возможность пользователю менять свой email, поэтому проверять email на уникальность не нужно
+                $this->model->getErrors (); // Если не прошли валидацию (есть ошибки). Мы должны их показать используя модель и метод getErrors (запишет ошибки валидации в сессию)
+
+                $_SESSION['form_data'] = $this->model->attributes; // Создаем элемент сессии с ключом 'form-data' для хранения вводимых пользователем данных в форму и запишем туда данные из массива $this->model->attributes
+
+            } else { // Иначе
+
+                if (!empty($this->model->attributes['password'])) { // Если строка с паролем не пуста (пользователь поменял пароль)
+                    $this->model->attributes['password'] = password_hash ($this->model->attributes['password'], PASSWORD_DEFAULT); // Перед сохранением пароля из пользовательской формы $this->model->attributes['password'] в БД, мы хешируем пароль функцией password_hash алгоритмом PASSWORD_DEFAULT
+                }
+
+                if ($this->model->update ('user', $_SESSION['user']['id'])) { // Если мы успешно обновили данные пользователя в БД
+                    $_SESSION['success'] = ___ ('user_credentials_success'); // Если перезаписали данные в БД (нет ошибок). Помещаем в массив $_SESSION по ключу 'success' строку сообщения 'Данные сохранены'
+                    foreach ($this->model->attributes as $k => $v) { // Обновляем учетные данные пользователя в сессии. Проходим в цикле по массиву attributes и получаем массив ключ-значение
+                        if (!empty($v) && $k != 'password') { // Если значение $v не пусто и ключ не равняется строке 'password'
+                            $_SESSION['user'][$k] = $v; // Записываем (обновим) в сессию в 'user' соответствующие данные ключ-значение
+                        }
+                    }
+                } else {
+                    $_SESSION['errors'] = ___ ('user_credentials_error'); // Если мы не смогли перезаписать данные в БД - выдаем ошибку. Помещаем в массив $_SESSION по ключу 'errors' строку сообщения 'Ошибка сохранения'
+                }
+
+            }
+            redirect (); // Делаем редирект на эту же страницу чтобы не было повторной отправки формы
+        }
+
+
+        $this->setMeta (___ ('user_credentials_title')); // Проставим мета-данные страницы
 
     }
+
 
 
 
