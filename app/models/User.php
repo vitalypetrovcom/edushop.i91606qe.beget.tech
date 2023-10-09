@@ -101,6 +101,12 @@ class User extends AppModel { // Модель (класс) для работы �
 
     }
 
+    public function get_user_file ($id, $lang): array { // Метод для получения файла для скачивания пользователем. На вход принимает id файла $id и язык $lang, на котором нужно отдать файл
+
+        return R::getRow ("SELECT od.*, d.*, dd.* FROM order_download od JOIN download d on d.id = od.download_id JOIN download_description dd on d.id = dd.download_id WHERE od.user_id = ? AND od.download_id = ? AND od.status = 1 AND dd.language_id = ?", [$_SESSION['user']['id'], $id, $lang['id']]); // Получаем одну строку с данными файла
+
+    }
+
 
 
 

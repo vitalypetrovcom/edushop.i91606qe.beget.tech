@@ -144,6 +144,39 @@ class UserController extends AppController { // Контроллер (класс
         $this->setMeta (___ ('user_files_title')); // Передадим мета-данные
         $this->set (compact ('files', 'pagination', 'total')); // Передаем сами данные файлов: массив файлов 'files', объект пагинации 'pagination', общее количество файлов 'total'
 
+    }
+
+    public function downloadAction () { // Метод для скачивания файла цифрового товара пользователем
+
+        if (!User::checkAuth ()) { // Проверяем, авторизован ли пользователь
+            redirect (base_url () . 'user/login'); // Делаем редирект на страницу авторизации
+        }
+
+        $id = get ('id'); // Получаем id параметр ссылки на скачивание файла
+        $lang = App::$app->getProperty ('language'); // Получаем текущий активный язык сайта из контейнера App
+        $file = $this->model->get_user_file ($id, $lang); // Получаем файл для скачивания. Передаем на вход $id, $lang
+
+        /*debug ($file,1); // Проверка правильности кода*/
+
+        if ($file) { // Если мы получили файл (массив)
+            $path = WWW . "/downloads/{$file['filename']}"; // Получаем путь к расположению файла
+            if (file_exists ($path)) { // Есть у нас такой файл по запрошенному адресу
+
+                // Считываем файл и отдаем пользователю. В PHP это можно сделать с помощью заголовков ("как скачать файл по временной ссылке в PHP")
+                header('Content-Type: application/octet-stream');
+                header('Content-Disposition: attachment; filename="' . basename($file['original_name']) . '"'); // Здесь мы указываем оригинальное имя файла $file['original_name']
+                header('Expires: 0');
+                header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                header('Pragma: public');
+                header('Content-Length: ' . filesize($path));
+                readfile($path); // С помощью функции readfile мы читаем файл по указанному пути. Пользователь скачивает файл у себя в браузере и остается на той же странице
+                exit(); // Завершаем выполнение кода (код дальше выполняться не будет)
+            } else {
+                $_SESSION['errors'] = ___ ('user_download_error'); // Вернем ошибку, что указанный файл не найден
+            }
+        }
+        redirect (); // Делаем редирект на эту же страницу
+
 
     }
 
