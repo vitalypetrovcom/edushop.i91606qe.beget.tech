@@ -70,10 +70,10 @@ use wfm\View; // Импортируем(подключаем) класс вид�
     </div>
 </div>
 
-<?php $this->getDbLogs (); ?>
+<?php $this->getDbLogs (); ?> <!-- Добавляем логи на страницу -->
 
 <script>
-    const PATH = '<?= PATH ?>';
+    const PATH = '<?= PATH ?>'; <!-- Добавляем константы -->
 </script>
 <script src="<?= PATH ?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
