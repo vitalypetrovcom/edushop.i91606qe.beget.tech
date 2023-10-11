@@ -18,7 +18,7 @@ use wfm\View; // Импортируем(подключаем) класс вид�
 <!-- ./wrapper -->
 
 <div class="logs">
-    <?php // $this->getDbLogs (); ?> <!-- Добавляем логи на страницу -->
+    <?php $this->getDbLogs (); ?> <!-- Добавляем логи на страницу -->
 </div>
 
 <script>
@@ -33,7 +33,7 @@ use wfm\View; // Импортируем(подключаем) класс вид�
 <!-- AdminLTE App -->
 <script src="<?= PATH ?>/adminlte/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?= PATH ?>/adminlte/dist/js/demo.js"></script>
+<!--<script src="<?php /*= PATH */?>/adminlte/dist/js/demo.js"></script>-->
 <script src="<?= PATH ?>/adminlte/main.js"></script> <!-- Подключаем файл main.js -->
 
 </body>

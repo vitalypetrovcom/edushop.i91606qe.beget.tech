@@ -6,7 +6,9 @@ class MainController extends AppController { // Контроллер (класс
 
     public function indexAction () { // Метод для обработки главной страницы админки
 
-
+        $title = 'Главная страница';
+        $this->setMeta ('Админка :: Главная страница');
+        $this->set (compact ('title'));
 
     }
 
