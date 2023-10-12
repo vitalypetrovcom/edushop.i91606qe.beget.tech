@@ -2622,3 +2622,9 @@
 =================
 [2023-10-11 11:44:22] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
 =================
+[2023-10-12 10:44:04] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-10-12 10:44:04] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-10-12 10:44:32] Текст ошибки: Контроллер app\controllers\admin\LoginAdminController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
