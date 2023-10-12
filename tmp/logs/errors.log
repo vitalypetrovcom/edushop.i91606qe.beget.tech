@@ -2630,3 +2630,27 @@
 =================
 [2023-10-12 11:57:50] Текст ошибки: Контроллер app\controllers\admin\ProductController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
 =================
+[2023-10-12 13:16:48] Текст ошибки: foreach() argument must be of type array|object, null given | Файл: D:\OSPanel\domains\new-ishop.loc\app\widgets\menu\Menu.php | Строка: 82
+=================
+[2023-10-12 13:17:23] Текст ошибки: foreach() argument must be of type array|object, null given | Файл: D:\OSPanel\domains\new-ishop.loc\app\widgets\menu\Menu.php | Строка: 82
+=================
+[2023-10-12 13:17:58] Текст ошибки: foreach() argument must be of type array|object, null given | Файл: D:\OSPanel\domains\new-ishop.loc\app\widgets\menu\Menu.php | Строка: 82
+=================
+[2023-10-12 13:19:53] Текст ошибки: Метод app\controllers\admin\CategoryController::addAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
+=================
+[2023-10-12 14:46:23] Текст ошибки: foreach() argument must be of type array|object, null given | Файл: D:\OSPanel\domains\new-ishop.loc\app\widgets\menu\Menu.php | Строка: 82
+=================
+[2023-10-12 14:47:14] Текст ошибки: foreach() argument must be of type array|object, null given | Файл: D:\OSPanel\domains\new-ishop.loc\app\widgets\menu\Menu.php | Строка: 82
+=================
+[2023-10-12 14:50:17] Текст ошибки: foreach() argument must be of type array|object, null given | Файл: D:\OSPanel\domains\new-ishop.loc\app\widgets\menu\Menu.php | Строка: 82
+=================
+[2023-10-12 14:51:37] Текст ошибки: foreach() argument must be of type array|object, null given | Файл: D:\OSPanel\domains\new-ishop.loc\app\widgets\menu\Menu.php | Строка: 82
+=================
+[2023-10-12 14:56:31] Текст ошибки: Class "app\controllers\admin\R" not found | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\admin\AppController.php | Строка: 28
+=================
+[2023-10-12 14:56:34] Текст ошибки: Class "app\controllers\admin\R" not found | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\admin\AppController.php | Строка: 28
+=================
+[2023-10-12 14:56:37] Текст ошибки: Class "app\controllers\admin\R" not found | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\admin\AppController.php | Строка: 28
+=================
+[2023-10-12 14:56:42] Текст ошибки: Class "app\controllers\admin\R" not found | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\admin\AppController.php | Строка: 28
+=================
