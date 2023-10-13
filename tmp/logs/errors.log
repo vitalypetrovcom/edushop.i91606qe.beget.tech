@@ -2668,3 +2668,5 @@
 =================
 [2023-10-13 10:52:52] Текст ошибки: Call to undefined function get_field_array_value() | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\admin\Category\add.php | Строка: 45
 =================
+[2023-10-13 16:49:30] Текст ошибки: Class "R" not found | Файл: D:\OSPanel\domains\new-ishop.loc\app\models\admin\Category.php | Строка: 31
+=================
