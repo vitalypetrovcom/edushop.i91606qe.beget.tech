@@ -2654,3 +2654,17 @@
 =================
 [2023-10-12 14:56:42] Текст ошибки: Class "app\controllers\admin\R" not found | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\admin\AppController.php | Строка: 28
 =================
+[2023-10-13 10:31:04] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-10-13 10:39:38] Текст ошибки: require(D:\OSPanel\domains\new-ishop.loc/app/widgets/menu/admin_select_tpl.php): Failed to open stream: No such file or directory | Файл: D:\OSPanel\domains\new-ishop.loc\app\widgets\menu\Menu.php | Строка: 103
+=================
+[2023-10-13 10:41:02] Текст ошибки: Call to undefined function get_field_array_value() | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\admin\Category\add.php | Строка: 45
+=================
+[2023-10-13 10:41:13] Текст ошибки: Call to undefined function get_field_array_value() | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\admin\Category\add.php | Строка: 45
+=================
+[2023-10-13 10:41:13] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-10-13 10:52:35] Текст ошибки: Call to undefined function get_field_array_value() | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\admin\Category\add.php | Строка: 45
+=================
+[2023-10-13 10:52:52] Текст ошибки: Call to undefined function get_field_array_value() | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\admin\Category\add.php | Строка: 45
+=================

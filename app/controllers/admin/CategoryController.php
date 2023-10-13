@@ -2,7 +2,10 @@
 
 namespace app\controllers\admin;
 
+use app\models\admin\Category;
 use RedBeanPHP\R;
+
+/** @property Category $model  */
 
 class CategoryController extends AppController { // Контроллер для работы с категориями товаров в админке
 
@@ -35,6 +38,24 @@ class CategoryController extends AppController { // Контроллер для 
             $_SESSION['success'] = 'Категория удалена'; // В массив сессии по ключу 'success' запишем сообщение, что категория была удалена
         }
         redirect (); // Делаем редирект на текущую страницу
+
+    }
+
+    public function addAction () { // Метод для добавления категорий в админ-панели сайта
+
+        if (!empty($_POST)) { // Если у нас не пустой массив $_POST
+            /*debug ($_POST); // Проверка правильности выполнения*/
+            if ($this->model->category_validate ()) { // Если мы прошли валидацию
+                $_SESSION['success'] = 'Категория сохранена'; // Записываем сообщение в массив сессии $_SESSION['success']
+            } else { // Если мы НЕ прошли валидацию
+
+            }
+            redirect (); // Делаем редирект на ту же страницу
+
+        }
+        $title = 'Добавление категории'; // Иначе, мы должны показать страницу с формой добавления новой категории. Объявляем переменную $title
+        $this->setMeta ("Админка :: {$title}"); // Передаем название title в представление
+        $this->set (compact ('title')); // Передаем саму переменную в вид
 
     }
 
