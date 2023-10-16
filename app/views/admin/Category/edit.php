@@ -42,22 +42,22 @@
 
                                 <div class="form-group">
                                     <label class="required" for="title">Наименование</label>
-                                    <input type="text" name="category_description[<?= $lang['id'] ?>][title]" class="form-control" id="title" placeholder="Наименование категории" value="<?= get_field_array_value('category_description', $lang['id'], 'title') ?>" required>
+                                    <input type="text" name="category_description[<?= $lang['id'] ?>][title]" class="form-control" id="title" placeholder="Наименование категории" value="<?= h ($category[$lang['id']]['title']) ?>" required2>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="description">Мета-описание</label>
-                                    <input type="text" name="category_description[<?= $lang['id'] ?>][description]" class="form-control" id="description" placeholder="Мета-описание" value="<?= get_field_array_value('category_description', $lang['id'], 'description') ?>">
+                                    <input type="text" name="category_description[<?= $lang['id'] ?>][description]" class="form-control" id="description" placeholder="Мета-описание" value="<?= h ($category[$lang['id']]['description']) ?>">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="keywords">Ключевые слова</label>
-                                    <input type="text" name="category_description[<?= $lang['id'] ?>][keywords]" class="form-control" id="keywords" placeholder="Ключевые слова" value="<?= get_field_array_value('category_description', $lang['id'], 'keywords') ?>">
+                                    <input type="text" name="category_description[<?= $lang['id'] ?>][keywords]" class="form-control" id="keywords" placeholder="Ключевые слова" value="<?= h ($category[$lang['id']]['keywords']) ?>">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="content">Описание категории</label>
-                                    <textarea name="category_description[<?= $lang['id'] ?>][content]" class="form-control editor" id="content" rows="3" placeholder="Описание категории"><?= get_field_array_value('category_description', $lang['id'], 'content') ?></textarea>
+                                    <textarea name="category_description[<?= $lang['id'] ?>][content]" class="form-control editor" id="content" rows="3" placeholder="Описание категории"><?= h ($category[$lang['id']]['content']) ?></textarea>
                                 </div>
 
                             </div>
@@ -70,12 +70,6 @@
             <button type="submit" class="btn btn-primary">Сохранить</button>
 
         </form>
-
-        <?php
-        if (isset($_SESSION['form_data'])) {
-            unset($_SESSION['form_data']);
-        }
-        ?>
 
     </div>
 

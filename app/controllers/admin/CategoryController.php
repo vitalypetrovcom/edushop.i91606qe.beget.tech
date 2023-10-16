@@ -64,4 +64,24 @@ class CategoryController extends AppController { // Контроллер для 
 
     }
 
+    public function editAction () { // Метод для редактирования категорий товаров в админ-панели
+
+        $id = get ('id'); // Получаем $id категории из массива $_GET (id в url адресе )
+        if (!empty($_POST)) { // Если админ заполнил форму изменения категории товара и отправил ее (массив $_POST не пустой), мы будем обрабатывать полученные данные
+
+        }
+        $category = $this->model->get_category ($id); // Объявляем переменную $category и передаем в нее данные конкретной категории из БД по ee $id
+        /*debug ($category); // Проверка правильности выполнения*/
+        if (!$category) { // Если переменная $category пуста,
+            throw new \Exception('Not found category!', 404); // Выдаем ошибку 'Not found category!'
+        }
+
+        $lang = App::$app->getProperty ('language')['id']; // Получаем текущий активный язык из контейнера App
+        App::$app->setProperty ('parent_id', $category[$lang]['parent_id']); // Устанавливаем в контейнер App по ключу 'parent_id' значение 'parent_id' из массива $category[$lang]['parent_id']
+        $title = 'Редактирование категории'; // Объявляем переменную $title
+        $this->setMeta ("Админка :: {$title}"); // Передаем название title в представление
+        $this->set (compact ('title', 'category')); // Передаем саму переменную в вид
+
+    }
+
 }
