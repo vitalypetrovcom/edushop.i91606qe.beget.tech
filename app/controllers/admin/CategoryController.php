@@ -4,6 +4,7 @@ namespace app\controllers\admin;
 
 use app\models\admin\Category;
 use RedBeanPHP\R;
+use wfm\App;
 
 /** @property Category $model  */
 

@@ -81,3 +81,34 @@
 
 </div>
 <!-- /.card -->
+
+<script>
+    // https://question-it.com/questions/3558262/kak-ja-mogu-sozdat-neskolko-redaktorov-s-imenem-klassa // Пример, как можно создавать (подключать) несколько редакторов для сайта
+    // https://ckeditor.com/docs/ckfinder/demo/ckfinder3/samples/ckeditor.html // Ссылка на документацию, где описана интеграция CKEditor на сайт
+    window.editors = {};
+    document.querySelectorAll( '.editor' ).forEach( ( node, index ) => { // Ищем (проходим в цикле) по всему файлу класс editor
+        ClassicEditor // Создаем (подключаем) визуальный редактор CKEditor
+            .create( node, {
+                ckfinder: {
+                    uploadUrl: '<?= PATH ?>/adminlte/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+                },
+                toolbar: [ 'ckfinder', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo', '|', 'link', 'bulletedList', 'numberedList', 'insertTable', 'blockQuote' ],
+                image: {
+                    toolbar: [ 'imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight' ],
+                    styles: [
+                        'alignLeft',
+                        'alignCenter',
+                        'alignRight'
+                    ]
+                }
+            } )
+            .then( newEditor => {
+                window.editors[ index ] = newEditor
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+    });
+
+</script>
+

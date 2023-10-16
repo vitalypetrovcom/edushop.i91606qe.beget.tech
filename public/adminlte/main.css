@@ -5,3 +5,8 @@ a {
 a:hover {
     color: #000;
 }
+
+.ck-editor__editable {
+    min-height: 300px;
+}
+
