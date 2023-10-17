@@ -2674,3 +2674,7 @@
 =================
 [2023-10-16 11:57:41] Текст ошибки: Метод app\controllers\admin\CategoryController::editAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
 =================
+[2023-10-16 16:00:10] Текст ошибки: Контроллер app\controllers\admin\ProductController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
+[2023-10-17 11:44:48] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
