@@ -19,9 +19,11 @@ use wfm\View; // Импортируем(подключаем) класс вид�
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= PATH ?>/adminlte/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="<?= PATH ?>/adminlte/main.css"> <!-- Подключаем файл main.css -->
+    <link rel="stylesheet" href="<?= PATH ?>/adminlte/plugins/select2/css/select2.min.css"> <!-- Подключаем файл select2.min.css -->
 
     <script src="<?= PATH?>/adminlte/ckeditor/ckeditor.js"></script> <!-- Рекомендуется подключать файлы CKEditor в header админки. Подключаем файл ckeditor.js -->
     <script src="<?= PATH?>/adminlte/ckfinder/ckfinder.js"></script> <!-- Подключаем файл ckfinder.js -->
+
 
 </head>
 <body class="hold-transition sidebar-mini">

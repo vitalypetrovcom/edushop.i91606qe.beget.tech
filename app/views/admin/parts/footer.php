@@ -35,6 +35,7 @@ use wfm\View; // Импортируем(подключаем) класс вид�
 <!-- AdminLTE for demo purposes -->
 <!--<script src="<?php /*= PATH */?>/adminlte/dist/js/demo.js"></script>-->
 <script src="<?= PATH ?>/adminlte/main.js"></script> <!-- Подключаем файл main.js -->
+<script src="<?= PATH ?>/adminlte/plugins/select2/js/select2.full.js"></script> <!-- Подключаем файл select2.full.js -->
 
 </body>
 </html>

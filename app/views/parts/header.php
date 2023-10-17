@@ -14,7 +14,7 @@ use wfm\View; // Импортируем(подключаем) класс вид�
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= PATH ?>/assets/css/magnific-popup.css">
     <link rel="stylesheet" href="<?= PATH ?>/assets/css/main.css">
-    <link rel="icon" type="image/png" size="32x32" href="<?= PATH ?>/assets/img/favicon.png">
+        <link rel="icon" type="image/png" size="32x32" href="<?= PATH ?>/assets/img/favicon.png">
     <?= $this->getMeta () ?>
 </head>
 <body>
