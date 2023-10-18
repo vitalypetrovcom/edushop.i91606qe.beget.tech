@@ -2696,3 +2696,5 @@
 =================
 [2023-10-17 16:03:00] Текст ошибки: Call to undefined method app\models\admin\Product::get_downloads() | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\admin\ProductController.php | Строка: 68
 =================
+[2023-10-18 09:13:21] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
