@@ -2698,3 +2698,15 @@
 =================
 [2023-10-18 09:13:21] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
 =================
+[2023-10-18 12:14:14] Текст ошибки: Array to string conversion | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\gabordemooij\redbean\RedBeanPHP\QueryWriter\AQueryWriter.php | Строка: 233
+=================
+[2023-10-18 12:26:49] Текст ошибки: Array to string conversion | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\gabordemooij\redbean\RedBeanPHP\QueryWriter\AQueryWriter.php | Строка: 233
+=================
+[2023-10-18 12:27:54] Текст ошибки: Array to string conversion | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\gabordemooij\redbean\RedBeanPHP\QueryWriter\AQueryWriter.php | Строка: 233
+=================
+[2023-10-18 13:09:15] Текст ошибки: Array to string conversion | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\gabordemooij\redbean\RedBeanPHP\QueryWriter\AQueryWriter.php | Строка: 233
+=================
+[2023-10-18 13:35:38] Текст ошибки: Метод app\controllers\admin\ProductController::editAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
+=================
+[2023-10-18 13:36:04] Текст ошибки: Метод app\controllers\admin\ProductController::deleteAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
+=================

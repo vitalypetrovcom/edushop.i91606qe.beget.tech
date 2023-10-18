@@ -12,7 +12,7 @@ define ("CONFIG", ROOT . '/config'); // Константа указывает п
 define ("LAYOUT", 'ishop'); // Шаблон сайта по умолчанию
 define ("PATH", 'http://new-ishop.loc'); // Адрес нашего сайта (путь к главной странице нашего сайта)
 define ("ADMIN", 'http://new-ishop.loc/admin'); // Адрес админки нашего сайта (путь к странице админки нашего сайта)
-define ("NO_IMAGE", 'uploads/no_image.jpg'); // Путь к странице административной панели нашего сайта
+define ("NO_IMAGE", '/public/uploads/no_image.jpg'); // Путь к странице административной панели нашего сайта
 
 require_once ROOT . '/vendor/autoload.php';
 
