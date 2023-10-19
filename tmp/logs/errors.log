@@ -2712,3 +2712,7 @@
 =================
 [2023-10-19 10:10:09] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
 =================
+[2023-10-19 13:23:14] Текст ошибки: Typed property wfm\Controller::$model must not be accessed before initialization | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\admin\DownloadController.php | Строка: 25
+=================
+[2023-10-19 13:24:01] Текст ошибки: Контроллер app\controllers\admin\OrderController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
