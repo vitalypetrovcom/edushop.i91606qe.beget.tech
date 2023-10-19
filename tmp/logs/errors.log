@@ -2716,3 +2716,7 @@
 =================
 [2023-10-19 13:24:01] Текст ошибки: Контроллер app\controllers\admin\OrderController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
 =================
+[2023-10-19 15:38:01] Текст ошибки: syntax error, unexpected token ";", expecting ")" | Файл: D:\OSPanel\domains\new-ishop.loc\app\controllers\admin\DownloadController.php | Строка: 37
+=================
+[2023-10-19 16:01:13] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================

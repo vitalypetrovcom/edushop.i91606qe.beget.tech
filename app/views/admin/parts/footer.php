@@ -36,6 +36,8 @@ use wfm\View; // Импортируем(подключаем) класс вид�
 <!--<script src="<?php /*= PATH */?>/adminlte/dist/js/demo.js"></script>-->
 <script src="<?= PATH ?>/adminlte/main.js"></script> <!-- Подключаем файл main.js -->
 <script src="<?= PATH ?>/adminlte/plugins/select2/js/select2.full.js"></script> <!-- Подключаем файл select2.full.js -->
+<script src="<?= PATH ?>/adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script> <!-- Подключаем файл bs-custom-file-input.min.js -->
+
 
 </body>
 </html>
