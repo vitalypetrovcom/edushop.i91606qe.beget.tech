@@ -88,9 +88,32 @@ class Download extends AppModel { // Модель (класс) для получ
             R::rollback (); // Можем откатить транзакцию если у нас что-то пошло не по плану
             return false; // Вернем false
         }
+    }
 
+    public function download_delete ($id): bool { // Метод для удаления загруженных файлов цифровых товаров из БД. На вход передаем $id файла
 
+        $file_name = R::getCell ("SELECT filename FROM download WHERE id = ?", [$id]); // Получим имя файла из БД по $id. Нам нужна ячейка - используем метод getCell
+        $file_path = WWW . "/downloads/{$file_name}"; // Определим полный путь к файлу
+        if (file_exists ($file_path)) { // Если такой файл существует (по указанному пути), тогда мы его будем удалять
 
+            R::begin (); // Используем транзакцию RedBeanPHP используя try-catch
+            try {
+                R::exec ("DELETE FROM download_description WHERE download_id = ?", [$id]); // Удаляем запись о файле из таблицы download_description БД по его $id
+                R::exec ("DELETE FROM download WHERE id = ?", [$id]); // Удаляем запись о файле из таблицы download БД по его $id
+
+                R::commit (); // Если все прошло успешно, тогда мы делаем commit этих запросов
+                @unlink ($file_path); // Мы попробуем удалить файл физически из БД.
+
+                //->> @ - символ подавления ошибок. После передачи в продакшн - можно использовать, чтобы пользователь не увидел ошибку!
+
+                return true; // Вернем true
+
+            } catch (\Exception $e) { // Если загрузка не удалась, мы откатываем операцию
+                R::rollback (); // Можем откатить транзакцию если у нас что-то пошло не по плану
+                return false; // Вернем false
+            }
         }
+        return false; // Если запрашиваемый файл не существует, вернем false
+    }
 
 }
