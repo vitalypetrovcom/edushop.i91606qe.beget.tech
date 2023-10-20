@@ -2724,3 +2724,7 @@
 =================
 [2023-10-20 11:47:16] Текст ошибки: Undefined array key "download_id" | Файл: D:\OSPanel\domains\new-ishop.loc\app\models\admin\Product.php | Строка: 215
 =================
+[2023-10-20 12:41:56] Текст ошибки: Контроллер app\controllers\admin\OrderController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
+[2023-10-20 12:48:00] Текст ошибки: Контроллер app\controllers\admin\OrdersController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
+=================
