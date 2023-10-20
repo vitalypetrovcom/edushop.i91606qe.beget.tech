@@ -2734,3 +2734,9 @@
 =================
 [2023-10-20 16:22:50] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
 =================
+[2023-10-20 17:27:44] Текст ошибки: Undefined variable $total | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\admin\User\index.php | Строка: 46
+=================
+[2023-10-20 17:28:36] Текст ошибки: Undefined variable $pagination | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\admin\User\index.php | Строка: 47
+=================
+[2023-10-20 17:29:15] Текст ошибки: Метод app\controllers\admin\UserController::viewAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
+=================
