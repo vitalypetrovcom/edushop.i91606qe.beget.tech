@@ -2728,3 +2728,9 @@
 =================
 [2023-10-20 12:48:00] Текст ошибки: Контроллер app\controllers\admin\OrdersController не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 79
 =================
+[2023-10-20 15:23:12] Текст ошибки: Undefined variable $order | Файл: D:\OSPanel\domains\new-ishop.loc\app\views\admin\Order\edit.php | Строка: 16
+=================
+[2023-10-20 15:46:03] Текст ошибки: app\models\admin\Order::get_order(): Return value must be of type array, none returned | Файл: D:\OSPanel\domains\new-ishop.loc\app\models\admin\Order.php | Строка: 24
+=================
+[2023-10-20 16:22:50] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
