@@ -2740,3 +2740,7 @@
 =================
 [2023-10-20 17:29:15] Текст ошибки: Метод app\controllers\admin\UserController::viewAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
 =================
+[2023-10-23 11:05:08] Текст ошибки: Страница не найдена! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 83
+=================
+[2023-10-23 12:18:38] Текст ошибки: Метод app\controllers\admin\UserController::editAction не найден! | Файл: D:\OSPanel\domains\new-ishop.loc\vendor\wfm\Router.php | Строка: 75
+=================

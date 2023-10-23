@@ -17,4 +17,10 @@ class User extends \app\models\User { // Модель (класс) для раб
 
     }
 
+    public function get_user ($id): array { // Получим профиль пользователя по id из БД
+
+        return R::getRow ("SELECT * FROM user WHERE id = ?", [$id]); // Это будет одна строка, поэтому используем метод getRow. Делаем выборку из таблицы user БД по id пользователя
+
+    }
+
 }
