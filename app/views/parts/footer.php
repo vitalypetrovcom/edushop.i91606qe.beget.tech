@@ -9,7 +9,7 @@ use wfm\View; // Импортируем(подключаем) класс вид�
                 <div class="col-md-3 col-6">
                     <h4><?php __ ('tpl_information'); ?></h4>
                     <?php new \app\widgets\page\Page( [  // Создаем экземпляр класса и передаем ему все необходимые опции
-                        'cache' => 0,
+                        'cache' => 60,
                         'class' => 'list-unstyled',
                         'prepend' => '<li><a href="' . base_url () . '">' . ___ ('tpl_home_link') . '</a></li>',
                     ] ) ?>
